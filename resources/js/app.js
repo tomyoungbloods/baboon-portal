@@ -4,25 +4,66 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-
-import Vue from 'vue';
 require('./bootstrap');
 require('admin-lte');
 
+import Vue from 'vue';
+import moment from 'moment'
+import VueProgressBar from 'vue-progressbar'
+import VueRouter from 'vue-router'
 window.Vue = require('vue');
+import Dashboard from './components/Dashboard.vue';
+import Profile from './components/Profile.vue';
+import Users from './components/Users.vue';
+
+
+
 import { Form, HasError, AlertError } from 'vform'
 
 window.Form = Form;
 Vue.component(HasError.name, HasError)
 Vue.component(AlertError.name, AlertError)
 
+import swal from 'sweetalert2'
+window.swal = swal;
 
-import VueRouter from 'vue-router'
-import Dashboard from './components/Dashboard.vue';
-import Profile from './components/Profile.vue';
-import Users from './components/Users.vue';
+// Toast Modal Pop Up
+
+const toast = swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 3000,
+    timerProgressBar: true,
+    onOpen: (toast) => {
+      toast.addEventListener('mouseenter', swal.stopTimer)
+      toast.addEventListener('mouseleave', swal.resumeTimer)
+    }
+  })
+
+  window.toast = toast;
+
+// Progress Bar
+
+const options = {
+    color: '#D6E74D',
+    failedColor: '#874b4b',
+    thickness: '6px',
+    transition: {
+      speed: '0.2s',
+      opacity: '0.6s',
+      termination: 300
+    },
+    autoRevert: true,
+    location: 'top',
+    inverse: false
+  }
+  
+  Vue.use(VueProgressBar, options)
+
+
+
 Vue.use(VueRouter)
-
 
 const router = new VueRouter({
     mode: 'history',
@@ -32,6 +73,16 @@ const router = new VueRouter({
         { path: '/users', component: Users }
     ]    
   })
+  
+// Vue Filters Start here
+
+  Vue.filter('upText', function(text){
+        return text.charAt(0).toUpperCase() + text.slice(1);
+  });
+
+  Vue.filter('myDate', function(created){
+        return moment(created).format("MMM Do YYYY"); 
+  });
 
 
 /**
