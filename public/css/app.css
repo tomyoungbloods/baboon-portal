@@ -31219,6 +31219,27 @@ a.text-muted:hover {
   color: #ffffff;
 }@charset "UTF-8";
 
+.baboon-light {
+  color: #D6E74D;
+}
+
+.baboon-dark {
+  color: #35555d;
+}
+
+.baboon-light-bg {
+  background: #D6E74D;
+}
+
+.baboon-dark-bg {
+  background: #35555d;
+}
+
+.baboon-btn {
+  background: #D6E74D !important;
+  color: #35555d !important;
+}
+
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -48187,5 +48208,14 @@ readers do not read off random characters that represent icons */
 .fab {
   font-family: "Font Awesome 5 Brands";
   font-weight: 400;
+}
+
+.router-link-active {
+  color: #35555d !important;
+  background-color: #D6E74D;
+}
+
+.router-link-active p {
+  color: #35555d !important;
 }
 
