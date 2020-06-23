@@ -48219,3 +48219,10 @@ readers do not read off random characters that represent icons */
   color: #35555d !important;
 }
 
+.user-panel img {
+  height: 2.1rem !important;
+  width: 2.1rem !important;
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+}
+

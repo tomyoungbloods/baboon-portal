@@ -5,6 +5,13 @@
     height: 250px;
 }
 
+.widget-user .widget-user-image > img {
+    border: 3px solid #ffffff;
+    height: 90px;
+    width: 90px;
+    object-fit: cover;
+}
+
 </style>
 
 <template>
@@ -14,11 +21,11 @@
                 <div class="card card-widget widget-user">
               <!-- Add the bg color to the header using any of the bg-* classes -->
               <div class="widget-user-header text-white" style="background: url('./img/user-cover.jpg') center center;">
-                <h3 class="widget-user-username text-right">Elizabeth Pierce</h3>
-                <h5 class="widget-user-desc text-right">Web Designer</h5>
+                <h3 class="widget-user-username text-right" >{{form.name}}</h3>
+                <h5 class="widget-user-desc text-right">{{form.bio}}</h5>
               </div>
               <div class="widget-user-image">
-                <img class="img-circle" src="" alt="User Avatar">
+                <img class="img-circle" :src="getProfilePhoto()" alt="User Avatar">
               </div>
               <div class="card-footer">
                 <div class="row">
@@ -183,19 +190,21 @@
                       <div class="form-group row">
                         <label for="inputName" class="col-sm-2 col-form-label">Naam</label>
                         <div class="col-sm-10">
-                          <input type="email" v-model="form.name"  class="form-control" id="inputName" placeholder="Naam">
+                          <input type="email" v-model="form.name"  class="form-control" id="inputName" placeholder="Naam" :class="{ 'is-invalid': form.errors.has('name') }">
+                          <has-error :form="form" field="name"></has-error>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="inputEmail"  class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-10">
-                          <input type="email" v-model="form.email" class="form-control" id="inputEmail" placeholder="Email">
+                          <input type="email" v-model="form.email" class="form-control" id="inputEmail" placeholder="Email" :class="{ 'is-invalid': form.errors.has('email') }">
+                          <has-error :form="form" field="email"></has-error>
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="inputExperience" class="col-sm-2 col-form-label">Experience</label>
+                        <label for="inputExperience" class="col-sm-2 col-form-label">Bio</label>
                         <div class="col-sm-10">
-                          <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+                          <textarea class="form-control" v-model="form.bio" id="inputExperience" placeholder="Vul hier uw beschrijving in"></textarea>
                         </div>
                       </div>
                       <div class="form-group row">
@@ -205,18 +214,10 @@
                         </div>
                       </div>
                       <div class="form-group row">
-                        <label for="inputSkills" class="col-sm-2 col-form-label">Skills</label>
+                        <label for="inputSkills" class="col-sm-2 col-form-label">Wachtwoord</label>
                         <div class="col-sm-10">
-                          <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
-                        </div>
-                      </div>
-                      <div class="form-group row">
-                        <div class="offset-sm-2 col-sm-10">
-                          <div class="checkbox">
-                            <label>
-                              <input type="checkbox"> I agree to the <a href="#">terms and conditions</a>
-                            </label>
-                          </div>
+                          <input type="password" v-model="form.password" class="form-control" id="inputSkills" placeholder="Wachtwoord" :class="{ 'is-invalid': form.errors.has('password') }">
+                          <has-error :form="form" field="password"></has-error>
                         </div>
                       </div>
                       <div class="form-group row">
@@ -238,7 +239,9 @@
 </template>
 
 <script>
- import Form from 'vform'
+import Form from 'vform'
+
+
     export default {
     data(){
         return {
@@ -259,11 +262,23 @@
         },
 
         methods: {
+            getProfilePhoto(){
+                let prefix = (this.form.photo.match(/\//) ? '' : '/img/profile/');
+                return prefix + this.form.photo;
+
+            },
             updateInfo(){
                 this.$Progress.start()
                 this.form.put('api/profile/')
                 .then(() => {
+                    swal.fire(
+                                'Updated!',
+                                'De gebruiker aangepast',
+                                'success'
+                            )
                     this.$Progress.finish()
+                    return this.$router.go(0);
+
                 })
                 .catch(() => {
                     this.$Progress.fail()
