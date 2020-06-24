@@ -126,13 +126,11 @@
         data() {
             
             return {
-                editmode: false,
-
+                 editmode: false,
                 users : {},
-
                 form: new Form({
-                    id: '',
-                    name: '',
+                    id:'',
+                    name : '',
                     email: '',
                     password: '',
                     type: '',
@@ -228,11 +226,20 @@
             }
         },
         created() {
-            this.loadUsers();
-            Fire.$on('AfterCreate', () => {
-                this.loadUsers();
-            });
-            // setInterval(() => this.loadUsers(), 3000);
+            Fire.$on('searching',() => {
+                let query = this.$parent.search;
+                axios.get('api/findUser?q=' + query)
+                .then((data) => {
+                    this.users = data.data.data
+                })
+                .catch(() => {
+                })
+            })
+           this.loadUsers();
+           Fire.$on('AfterCreate',() => {
+               this.loadUsers();
+           });
+        //    setInterval(() => this.loadUsers(), 3000);
         }
     }
 </script>

@@ -137,6 +137,11 @@ const app = new Vue({
     el: '#app',
     router,
     data :{
-      
+      search: ''
+    },
+    methods:{
+      searchit(){
+        Fire.$emit('searching'); //Create a event called searching
+      }
     }
 });

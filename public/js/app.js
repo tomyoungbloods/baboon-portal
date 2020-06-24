@@ -2585,10 +2585,16 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this5 = this;
 
+    Fire.$on('searching', function () {
+      var query = _this5.$parent.search;
+      axios.get('api/findUser?q=' + query).then(function (data) {
+        _this5.users = data.data.data;
+      })["catch"](function () {});
+    });
     this.loadUsers();
     Fire.$on('AfterCreate', function () {
       _this5.loadUsers();
-    }); // setInterval(() => this.loadUsers(), 3000);
+    }); //    setInterval(() => this.loadUsers(), 3000);
   }
 });
 
@@ -83306,7 +83312,14 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('not-found', __webpack_requ
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   router: router,
-  data: {}
+  data: {
+    search: ''
+  },
+  methods: {
+    searchit: function searchit() {
+      Fire.$emit('searching'); //Create a event called searching
+    }
+  }
 });
 
 /***/ }),
