@@ -27,6 +27,22 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        // Return true if current user is equal to admin
+        Gate::define('isAdmin', function ($user){
+            return $user->type === 'admin';
+        });
+
+         // Return true if current user is equal to admin
+         Gate::define('isAuthor', function ($user){
+            return $user->type === 'author';
+        });
+
+        // Return true if current user is equal to admin
+        Gate::define('isUser', function ($user){
+            return $user->type === 'user';
+        });
+
+
         Passport::routes();
     }
 }

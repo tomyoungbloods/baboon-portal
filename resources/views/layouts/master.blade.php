@@ -11,7 +11,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <title>AdminLTE 3 | Starter</title>
+  <title>Baboon Portal</title>
 
  <link rel="stylesheet" href="/css/app.css">
 </head>
@@ -67,73 +67,104 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
       <!-- Sidebar Menu -->
       <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-
+        @can('isAdmin')
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+                with font-awesome or any other icon font library -->
+              <li class="nav-item">
+              <router-link to="/dashboard" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Dashboard
+                </p>
+              </router-link>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-cog"></i>
+                <p>
+                  Management
+                  <i class="right fas fa-angle-left"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <router-link to="/users" class="nav-link">
+                    <i class="fas fa-users nav-icon"></i>
+                    <p>Users</p>
+                  </router-link>
+                </li>
+              </ul>
+            </li>
             <li class="nav-item">
-            <router-link to="/dashboard" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
-              </p>
-            </router-link>
-          </li>
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-cog"></i>
-              <p>
-                Management
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <router-link to="/users" class="nav-link">
-                  <i class="fas fa-users nav-icon"></i>
-                  <p>Users</p>
-                </router-link>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inactive Page</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <router-link to="/profile" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
-              <p>
-                Profile
-              </p>
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <router-link to="/developer" class="nav-link">
-              <i class="nav-icon fas fas fa-cogs"></i>
-              <p>
-                Developer
-              </p>
-            </router-link>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('logout') }}"
-              onclick="event.preventDefault();
-                            document.getElementById('logout-form').submit();">
-              <i class="nav-icon fas fa-power-off baboon-light"></i> 
-              <p class="baboon-light">
-                {{ __('Logout') }}
-              </p>             
-            </a>
+              <router-link to="/profile" class="nav-link">
+                <i class="nav-icon fas fa-user"></i>
+                <p>
+                  Profile
+                </p>
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/developer" class="nav-link">
+                <i class="nav-icon fas fas fa-cogs"></i>
+                <p>
+                  Developer
+                </p>
+              </router-link>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                <i class="nav-icon fas fa-power-off baboon-light"></i> 
+                <p class="baboon-light">
+                  {{ __('Logout') }}
+                </p>             
+              </a>
 
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                @csrf
-            </form>
-          </li>
-        </ul>
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+            </li>
+          </ul>
+        @endcan
+        @can('isUser')
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+                with font-awesome or any other icon font library -->
+              <li class="nav-item">
+              <router-link to="/dashboard" class="nav-link">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
+                <p>
+                  Dashboard
+                </p>
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link to="/profile" class="nav-link">
+                <i class="nav-icon fas fa-user"></i>
+                <p>
+                  Profile
+                </p>
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ route('logout') }}"
+                onclick="event.preventDefault();
+                              document.getElementById('logout-form').submit();">
+                <i class="nav-icon fas fa-power-off baboon-light"></i> 
+                <p class="baboon-light">
+                  {{ __('Logout') }}
+                </p>             
+              </a>
 
+              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+              </form>
+            </li>
+          </ul>
+        @endcan
       </nav>
       <!-- /.sidebar-menu -->
     </div>
@@ -164,9 +195,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2020 <a href="https://baboonbranding.nl">Baboon Branding</a>.</strong> All rights reserved.
   </footer>
 </div>
+
+@auth
+<script>
+
+window.user = @json(auth()->user()); 
+
+</script>
+@endauth
+
 <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 </html>

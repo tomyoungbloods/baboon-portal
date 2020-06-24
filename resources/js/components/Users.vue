@@ -1,6 +1,7 @@
 <template>
     <div class="container">
-        <div class="row mt-5">
+
+        <div class="row mt-5" v-if="$gate.isAdminOrAuthor()">
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
@@ -47,10 +48,15 @@
                   </tbody>
                 </table>
               </div>
+            
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
           </div>
+        </div>
+        <div v-if="!$gate.isAdminOrAuthor()">
+
+            <not-found></not-found>
         </div>
         <div class="modal" id="addNew" tabindex="-1" role="dialog">
             <div class="modal-dialog modal-dialog-centered" role="document">
@@ -80,7 +86,7 @@
                                 <select name="type" v-model="form.type" id="type" class="form-control" :class="{ 'is-invalid': form.errors.has('type') }">
                                     <option value="">Selecteer een gebruikerstype</option>
                                     <option value="admin">Admin</option>
-                                    <option value="user">Standaard Gebruiker</option>
+                                    <option value="user">User</option>
                                     <option value="author">Author</option>
                                 </select>
                                 <has-error :form="form" field="type"></has-error>
@@ -196,7 +202,9 @@
 
             },
             loadUsers(){
-                axios.get("api/user").then(({ data }) => (this.users = data.data));
+                if(this.$gate.isAdminOrAuthor()){
+                    axios.get("api/user").then(({ data }) => (this.users = data.data));
+                }
             },
             createUser(){
                 this.$Progress.start()

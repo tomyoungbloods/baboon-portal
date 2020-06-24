@@ -17,6 +17,9 @@ import Profile from './components/Profile.vue';
 import Users from './components/Users.vue';
 import Developer from './components/Developer.vue';
 
+import Gate from "./Gate";
+Vue.prototype.$gate = new Gate(window.user); 
+
 
 
 import { Form, HasError, AlertError } from 'vform'
@@ -61,6 +64,7 @@ const options = {
   }
   
   Vue.use(VueProgressBar, options)
+
 
 
 
@@ -118,6 +122,11 @@ Vue.component(
   require('./components/passport/PersonalAccessTokens.vue').default
 );
 
+Vue.component(
+  'not-found',
+  require('./components/NotFound.vue').default
+);
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -126,5 +135,8 @@ Vue.component(
 
 const app = new Vue({
     el: '#app',
-    router
+    router,
+    data :{
+      
+    }
 });
