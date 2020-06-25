@@ -140,8 +140,8 @@ const app = new Vue({
       search: ''
     },
     methods:{
-      searchit(){
+      searchit: _.debounce(() => {
         Fire.$emit('searching'); //Create a event called searching
-      }
+      },1000)// Wait for 2sec
     }
 });

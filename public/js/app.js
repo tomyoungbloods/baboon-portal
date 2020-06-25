@@ -83316,9 +83316,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     search: ''
   },
   methods: {
-    searchit: function searchit() {
+    searchit: _.debounce(function () {
       Fire.$emit('searching'); //Create a event called searching
-    }
+    }, 1000) // Wait for 2sec
+
   }
 });
 
