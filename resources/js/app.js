@@ -12,10 +12,11 @@ import moment from 'moment'
 import VueProgressBar from 'vue-progressbar'
 import VueRouter from 'vue-router'
 window.Vue = require('vue');
-import Dashboard from './components/Dashboard.vue';
-import Profile from './components/Profile.vue';
-import Users from './components/Users.vue';
-import Developer from './components/Developer.vue';
+import Dashboard from './components/Dashboard';
+import Profile from './components/Profile';
+import Users from './components/Users';
+import Developer from './components/Developer';
+import Tasks from './components/tasks/Tasks';
 
 import Gate from "./Gate";
 Vue.prototype.$gate = new Gate(window.user); 
@@ -31,7 +32,7 @@ Vue.component(AlertError.name, AlertError)
 import swal from 'sweetalert2'
 window.swal = swal;
 
-// Toast Modal Pop Up
+// Toast Modal Pop Up 
 
 const toast = swal.mixin({
     toast: true,
@@ -76,7 +77,8 @@ const router = new VueRouter({
         { path: '/dashboard', component: Dashboard },
         { path: '/profile', component: Profile },
         { path: '/users', component: Users },
-        { path: '/developer', component: Developer }
+        { path: '/developer', component: Developer },
+        { path: '/verzoeken', component: Tasks }
     ]    
   })
   
