@@ -12,7 +12,7 @@ class Task extends Model
      * @var array
      */
     protected $casts = [
-        'is_complete' => 'boolean',
+        
     ];
 
     /**
@@ -23,7 +23,8 @@ class Task extends Model
     protected $fillable = [
         'title',
         'description',
-        'is_complete',
+        'status',
+        'user_id'
     ];
 
     /**

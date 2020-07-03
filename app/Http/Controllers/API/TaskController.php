@@ -22,9 +22,9 @@ class TaskController extends Controller
         // paginate the authorized user's tasks with 5 per page
         $tasks = auth('api')->user()
             ->tasks()
-            ->orderBy('is_complete')
+            ->orderBy('status') 
             ->orderByDesc('created_at')
-            ->paginate(5);
+            ->paginate(25);
 
         // return task index view with paginated tasks
         return $tasks;
@@ -43,17 +43,24 @@ class TaskController extends Controller
             'title' => 'required|string|max:255',
         ]);
 
-        // create a new incomplete task with the given title
-        Auth::user()->tasks()->create([
-            'title' => $data['title'],
-            'is_complete' => false,
+        // // create a new incomplete task with the given title
+        // auth('api')->user()->tasks()->create([
+        //     'title' => $data['title'],
+        //     'status' => $data['status'],
+        // ]);
+
+        return Task::create([
+            'title' => $request['title'],
+            'status' => $request['status'],
+            'user_id' => $request['user_id'],
+            
         ]);
 
-        // flash a success message to the session
-        session()->flash('status', 'Task Created!');
+        // // flash a success message to the session
+        // session()->flash('status', 'Task Created!');
 
-        // redirect to tasks index
-        return redirect('/verzoeken');
+        // // redirect to tasks index
+        // return redirect('/verzoeken');
     }
 
     /**
@@ -77,5 +84,23 @@ class TaskController extends Controller
 
         // redirect to tasks index
         return redirect('/tasks');
+    }
+        /**
+     * Paginate the authenticated user's tasks.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function allTasks()
+    {
+
+        // // paginate the authorized user's tasks with 5 per page
+        // $tasks = auth('api')->user()
+        //     ->tasks()
+        //     ->orderBy('is_complete') 
+        //     ->orderByDesc('created_at')
+        //     ->paginate(25); 
+
+        // return task index view with paginated tasks
+        return Task::with('user')->latest()->paginate(50);
     }
 }

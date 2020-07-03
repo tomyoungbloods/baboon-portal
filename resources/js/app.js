@@ -17,6 +17,8 @@ import Profile from './components/Profile';
 import Users from './components/Users';
 import Developer from './components/Developer';
 import Tasks from './components/tasks/Tasks';
+import AllTasks from './components/tasks/AllTasks';
+
 
 import Gate from "./Gate";
 Vue.prototype.$gate = new Gate(window.user); 
@@ -78,7 +80,8 @@ const router = new VueRouter({
         { path: '/profile', component: Profile },
         { path: '/users', component: Users },
         { path: '/developer', component: Developer },
-        { path: '/verzoeken', component: Tasks }
+        { path: '/verzoeken', component: Tasks },
+        { path: '/alleverzoeken', component: AllTasks }
     ]    
   })
   
