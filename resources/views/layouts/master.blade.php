@@ -93,7 +93,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <p>Users</p>
                   </router-link>
                 </li>
-              </ul>
+              </ul> 
             </li>
             <li class="nav-item">
               <router-link to="/profile" class="nav-link">
