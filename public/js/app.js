@@ -69099,8 +69099,9 @@ var render = function() {
                               attrs: {
                                 type: "text",
                                 "data-inputmask-alias": "datetime",
+                                placeholder: "yyyy/mm/dd",
                                 "data-inputmask-inputformat": "dd/mm/yyyy",
-                                "data-mask": "dd/mm/yyyy",
+                                "data-mask": "",
                                 "im-insert": "false"
                               },
                               domProps: { value: _vm.form.date },
@@ -69815,6 +69816,7 @@ var render = function() {
                               attrs: {
                                 type: "text",
                                 "data-inputmask-alias": "datetime",
+                                placeholder: "yyyy/mm/dd",
                                 "data-inputmask-inputformat": "dd/mm/yyyy",
                                 "data-mask": "dd/mm/yyyy",
                                 "im-insert": "false"
