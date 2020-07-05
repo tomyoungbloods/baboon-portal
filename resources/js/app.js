@@ -16,7 +16,7 @@ import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
 import Users from './components/Users';
 import Developer from './components/Developer';
-import Tasks from './components/tasks/Tasks';
+import MyTasks from './components/tasks/MyTasks';
 import AllTasks from './components/tasks/AllTasks';
 
 
@@ -80,7 +80,7 @@ const router = new VueRouter({
         { path: '/profile', component: Profile },
         { path: '/users', component: Users },
         { path: '/developer', component: Developer },
-        { path: '/verzoeken', component: Tasks },
+        { path: '/mijnverzoeken', component: MyTasks },
         { path: '/alleverzoeken', component: AllTasks }
     ]    
   })

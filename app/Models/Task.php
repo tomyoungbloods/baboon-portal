@@ -24,7 +24,8 @@ class Task extends Model
         'title',
         'description',
         'status',
-        'user_id'
+        'user_id',
+        'date'
     ];
 
     /**

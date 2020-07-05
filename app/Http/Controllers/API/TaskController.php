@@ -18,12 +18,13 @@ class TaskController extends Controller
      */
     public function index()
     {
-
+        
         // paginate the authorized user's tasks with 5 per page
         $tasks = auth('api')->user()
             ->tasks()
+            ->with('user')
             ->orderBy('status') 
-            ->orderByDesc('created_at')
+            ->orderByDesc('date')
             ->paginate(25);
 
         // return task index view with paginated tasks
@@ -53,7 +54,7 @@ class TaskController extends Controller
             'title' => $request['title'],
             'status' => $request['status'],
             'user_id' => $request['user_id'],
-            
+            'date' => $request['date'],  
         ]);
 
         // // flash a success message to the session
@@ -70,20 +71,30 @@ class TaskController extends Controller
      * @return \Illuminate\Routing\Redirector
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function update(Task $task)
+    public function update(Request $request, $id)
     {
-        // check if the authenticated user can complete the task
-        $this->authorize('complete', $task);
+        $task = Task::findorfail($id);
 
-        // mark the task as complete and save it
-        $task->is_complete = true;
-        $task->save();
+        $task->update($request->all());
+        return ['message' => "Succes"];
+    }
 
-        // flash a success message to the session
-        session()->flash('status', 'Task Completed!');
+        /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
 
-        // redirect to tasks index
-        return redirect('/tasks');
+        $task = Task::findOrfail($id);
+
+        //Delete the task
+
+        $task->delete();
+
+        return ['message' => 'User Deleted'];
     }
         /**
      * Paginate the authenticated user's tasks.
@@ -101,6 +112,9 @@ class TaskController extends Controller
         //     ->paginate(25); 
 
         // return task index view with paginated tasks
-        return Task::with('user')->latest()->paginate(50);
+        return Task::with('user')
+        ->orderBy('date', 'desc')
+        ->paginate(50);
+
     }
 }
