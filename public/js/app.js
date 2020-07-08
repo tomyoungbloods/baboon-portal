@@ -3988,9 +3988,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -69299,218 +69296,250 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "app" } }, [
-    _c("div", { staticClass: "col-12 " }, [
-      _c("div", { staticClass: "card mt-4" }, [
-        _vm._m(0),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-body table-responsive p-0" }, [
-          _c("table", { staticClass: "table table-hover text-nowrap" }, [
-            _vm._m(1),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              _vm._l(_vm.openTasks, function(task) {
-                return _c("tr", { key: task.id }, [
-                  _c("td", [_vm._v(_vm._s(task.title))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(task.user.name))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm._f("myDate")(task.date)))]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c("span", { staticClass: "tag tag-success" }, [
-                      _vm._v(_vm._s(task.status))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c(
-                      "a",
-                      {
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            return _vm.editModal(task)
-                          }
-                        }
-                      },
-                      [_c("i", { staticClass: "fa fa-edit baboon" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            return _vm.deleteTask(task.id)
-                          }
-                        }
-                      },
-                      [_c("i", { staticClass: "fa fa-trash" })]
-                    )
-                  ])
-                ])
-              }),
-              0
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-footer clearfix" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-info float-right",
-              attrs: { type: "button" },
-              on: { click: _vm.newModal }
-            },
-            [_c("i", { staticClass: "fas fa-plus" }), _vm._v(" Add item")]
-          )
-        ])
-      ]),
+  return _c("div", { staticClass: "verzoeken", attrs: { id: "app" } }, [
+    _c("div", { staticClass: "col-12 mt-4" }, [
+      _vm._m(0),
       _vm._v(" "),
-      _c("div", { staticClass: "card" }, [
-        _vm._m(2),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-body table-responsive p-0" }, [
-          _c("table", { staticClass: "table table-hover text-nowrap" }, [
-            _vm._m(3),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              _vm._l(_vm.busyTasks, function(task) {
-                return _c("tr", { key: task.id }, [
-                  _c("td", [_vm._v(_vm._s(task.title))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(task.user.name))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm._f("myDate")(task.date)))]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c("span", { staticClass: "tag tag-success" }, [
-                      _vm._v(_vm._s(task.status))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c(
-                      "a",
-                      {
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            return _vm.editModal(task)
-                          }
+      _c(
+        "div",
+        { staticClass: "row mt-4 baboon-green-bg p-4" },
+        [
+          _vm._m(1),
+          _vm._v(" "),
+          _vm._l(_vm.openTasks, function(task) {
+            return _c(
+              "div",
+              {
+                key: task.id,
+                staticClass: "d-flex flex-row col-12 verzoeken-body"
+              },
+              [
+                _c("div", { staticClass: "col-2 profile-img" }, [
+                  _c("img", {
+                    attrs: { src: "/img/profile/" + task.user.photo }
+                  }),
+                  _vm._v(_vm._s(task.user.name) + "\n         ")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-6" }, [
+                  _vm._v("\n           " + _vm._s(task.title) + "\n         ")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-2" }, [
+                  _vm._v(
+                    "\n           " +
+                      _vm._s(_vm._f("myDate")(task.date)) +
+                      "\n         "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-1 status" }, [
+                  _vm._v("\n           " + _vm._s(task.status) + "\n         ")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-1" }, [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          return _vm.editModal(task)
                         }
-                      },
-                      [_c("i", { staticClass: "fa fa-edit baboon" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            return _vm.deleteTask(task.id)
-                          }
+                      }
+                    },
+                    [_c("i", { staticClass: "fa fa-edit baboon" })]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          return _vm.deleteTask(task.id)
                         }
-                      },
-                      [_c("i", { staticClass: "fa fa-trash" })]
-                    )
-                  ])
+                      }
+                    },
+                    [_c("i", { staticClass: "fa fa-trash" })]
+                  )
                 ])
-              }),
-              0
+              ]
             )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-footer clearfix" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-info float-right",
-              attrs: { type: "button" },
-              on: { click: _vm.newModal }
-            },
-            [_c("i", { staticClass: "fas fa-plus" }), _vm._v(" Add item")]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card" }, [
-        _vm._m(4),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-body table-responsive p-0" }, [
-          _c("table", { staticClass: "table table-hover text-nowrap" }, [
-            _vm._m(5),
-            _vm._v(" "),
-            _c(
-              "tbody",
-              _vm._l(_vm.closedTasks, function(task) {
-                return _c("tr", { key: task.id }, [
-                  _c("td", [_vm._v(_vm._s(task.title))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(task.user.name))]),
-                  _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(_vm._f("myDate")(task.date)))]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c("span", { staticClass: "tag tag-success" }, [
-                      _vm._v(_vm._s(task.status))
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("td", [
-                    _c(
-                      "a",
-                      {
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            return _vm.editModal(task)
-                          }
-                        }
-                      },
-                      [_c("i", { staticClass: "fa fa-edit baboon" })]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "a",
-                      {
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            return _vm.deleteTask(task.id)
-                          }
-                        }
-                      },
-                      [_c("i", { staticClass: "fa fa-trash" })]
-                    )
-                  ])
-                ])
-              }),
-              0
-            )
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "card-footer clearfix" }, [
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-info float-right",
-              attrs: { type: "button" },
-              on: { click: _vm.newModal }
-            },
-            [_c("i", { staticClass: "fas fa-plus" }), _vm._v(" Add item")]
-          )
-        ])
-      ])
+          })
+        ],
+        2
+      )
     ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-12 mt-4" }, [
+      _vm._m(2),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "row mt-4 baboon-green-bg p-4" },
+        [
+          _vm._m(3),
+          _vm._v(" "),
+          _vm._l(_vm.busyTasks, function(task) {
+            return _c(
+              "div",
+              {
+                key: task.id,
+                staticClass: "d-flex flex-row col-12 verzoeken-body"
+              },
+              [
+                _c("div", { staticClass: "col-2 profile-img" }, [
+                  _c("img", {
+                    attrs: { src: "/img/profile/" + task.user.photo }
+                  }),
+                  _vm._v(_vm._s(task.user.name) + "\n            ")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-6" }, [
+                  _vm._v(
+                    "\n              " + _vm._s(task.title) + "\n            "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-2" }, [
+                  _vm._v(
+                    "\n              " +
+                      _vm._s(_vm._f("myDate")(task.date)) +
+                      "\n            "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-1 status" }, [
+                  _vm._v(
+                    "\n              " + _vm._s(task.status) + "\n            "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-1" }, [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          return _vm.editModal(task)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fa fa-edit baboon" })]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          return _vm.deleteTask(task.id)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fa fa-trash" })]
+                  )
+                ])
+              ]
+            )
+          })
+        ],
+        2
+      )
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "col-12 mt-4" }, [
+      _vm._m(4),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "row mt-4 baboon-green-bg p-4" },
+        [
+          _vm._m(5),
+          _vm._v(" "),
+          _vm._l(_vm.closedTasks, function(task) {
+            return _c(
+              "div",
+              {
+                key: task.id,
+                staticClass: "d-flex flex-row col-12 verzoeken-body"
+              },
+              [
+                _c("div", { staticClass: "col-2 profile-img" }, [
+                  _c("img", {
+                    attrs: { src: "/img/profile/" + task.user.photo }
+                  }),
+                  _vm._v(_vm._s(task.user.name) + "\n            ")
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-6" }, [
+                  _vm._v(
+                    "\n              " + _vm._s(task.title) + "\n            "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-2" }, [
+                  _vm._v(
+                    "\n              " +
+                      _vm._s(_vm._f("myDate")(task.date)) +
+                      "\n            "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-1 status" }, [
+                  _vm._v(
+                    "\n              " + _vm._s(task.status) + "\n            "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-1" }, [
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          return _vm.editModal(task)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fa fa-edit baboon" })]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "a",
+                    {
+                      attrs: { href: "#" },
+                      on: {
+                        click: function($event) {
+                          return _vm.deleteTask(task.id)
+                        }
+                      }
+                    },
+                    [_c("i", { staticClass: "fa fa-trash" })]
+                  )
+                ])
+              ]
+            )
+          })
+        ],
+        2
+      )
+    ]),
+    _vm._v(" "),
+    _c(
+      "button",
+      {
+        staticClass:
+          "add-right-button position-fixed right btn btn-info float-right",
+        attrs: { type: "button" },
+        on: { click: _vm.newModal }
+      },
+      [_c("i", { staticClass: "fas fa-plus" })]
+    ),
     _vm._v(" "),
     _c(
       "div",
@@ -69730,7 +69759,7 @@ var render = function() {
                                 "data-inputmask-alias": "datetime",
                                 placeholder: "yyyy/mm/dd",
                                 "data-inputmask-inputformat": "dd/mm/yyyy",
-                                "data-mask": "dd/mm/yyyy",
+                                "data-mask": "",
                                 "im-insert": "false"
                               },
                               domProps: { value: _vm.form.date },
@@ -69803,35 +69832,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header" }, [
-      _c("h3", { staticClass: "card-title" }, [_vm._v("Open verzoeken")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-tools" }, [
-        _c(
-          "div",
-          {
-            staticClass: "input-group input-group-sm",
-            staticStyle: { width: "150px" }
-          },
-          [
-            _c("input", {
-              staticClass: "form-control float-right",
-              attrs: {
-                type: "text",
-                name: "table_search",
-                placeholder: "Search"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "input-group-append" }, [
-              _c(
-                "button",
-                { staticClass: "btn btn-default", attrs: { type: "submit" } },
-                [_c("i", { staticClass: "fas fa-search" })]
-              )
-            ])
-          ]
-        )
+    return _c("div", { staticClass: "row" }, [
+      _c("h1", { staticClass: "verzoeken-title col-12" }, [
+        _vm._v("Open Verzoeken")
       ])
     ])
   },
@@ -69839,55 +69842,39 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("Taak")]),
+    return _c(
+      "div",
+      { staticClass: "d-flex flex-row col-12 verzoeken-header pb-3" },
+      [
+        _c("div", { staticClass: "col-2" }, [
+          _vm._v("\n           Wie pakt het op?\n         ")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Wie pakt het op?")]),
+        _c("div", { staticClass: "col-6" }, [
+          _vm._v("\n           Taak\n         ")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Date")]),
+        _c("div", { staticClass: "col-2" }, [
+          _vm._v("\n           Date\n         ")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Status")]),
+        _c("div", { staticClass: "col-1" }, [
+          _vm._v("\n           Status\n         ")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Edit")])
-      ])
-    ])
+        _c("div", { staticClass: "col-1" }, [
+          _vm._v("\n           Edit\n         ")
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header" }, [
-      _c("h3", { staticClass: "card-title" }, [
+    return _c("div", { staticClass: "row" }, [
+      _c("h1", { staticClass: "verzoeken-title col-12" }, [
         _vm._v("Verzoeken in behandeling")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-tools" }, [
-        _c(
-          "div",
-          {
-            staticClass: "input-group input-group-sm",
-            staticStyle: { width: "150px" }
-          },
-          [
-            _c("input", {
-              staticClass: "form-control float-right",
-              attrs: {
-                type: "text",
-                name: "table_search",
-                placeholder: "Search"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "input-group-append" }, [
-              _c(
-                "button",
-                { staticClass: "btn btn-default", attrs: { type: "submit" } },
-                [_c("i", { staticClass: "fas fa-search" })]
-              )
-            ])
-          ]
-        )
       ])
     ])
   },
@@ -69895,17 +69882,39 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("Taak")]),
+    return _c(
+      "div",
+      { staticClass: "d-flex flex-row col-12 verzoeken-header pb-3" },
+      [
+        _c("div", { staticClass: "col-2" }, [
+          _vm._v("\n              Wie pakt het op?\n            ")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Wie pakt het op?")]),
+        _c("div", { staticClass: "col-6" }, [
+          _vm._v("\n              Taak\n            ")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Date")]),
+        _c("div", { staticClass: "col-2" }, [
+          _vm._v("\n              Date\n            ")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Status")]),
+        _c("div", { staticClass: "col-1" }, [
+          _vm._v("\n              Status\n            ")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Edit")])
+        _c("div", { staticClass: "col-1" }, [
+          _vm._v("\n              Edit\n            ")
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("h1", { staticClass: "verzoeken-title col-12" }, [
+        _vm._v("Voltooide verzoeken")
       ])
     ])
   },
@@ -69913,55 +69922,31 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-header" }, [
-      _c("h3", { staticClass: "card-title" }, [_vm._v("Voltooide verzoeken")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "card-tools" }, [
-        _c(
-          "div",
-          {
-            staticClass: "input-group input-group-sm",
-            staticStyle: { width: "150px" }
-          },
-          [
-            _c("input", {
-              staticClass: "form-control float-right",
-              attrs: {
-                type: "text",
-                name: "table_search",
-                placeholder: "Search"
-              }
-            }),
-            _vm._v(" "),
-            _c("div", { staticClass: "input-group-append" }, [
-              _c(
-                "button",
-                { staticClass: "btn btn-default", attrs: { type: "submit" } },
-                [_c("i", { staticClass: "fas fa-search" })]
-              )
-            ])
-          ]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("tr", [
-        _c("th", [_vm._v("Taak")]),
+    return _c(
+      "div",
+      { staticClass: "d-flex flex-row col-12 verzoeken-header pb-3" },
+      [
+        _c("div", { staticClass: "col-2" }, [
+          _vm._v("\n              Wie pakt het op?\n            ")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Wie pakt het op?")]),
+        _c("div", { staticClass: "col-6" }, [
+          _vm._v("\n              Taak\n            ")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Date")]),
+        _c("div", { staticClass: "col-2" }, [
+          _vm._v("\n              Date\n            ")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Status")]),
+        _c("div", { staticClass: "col-1" }, [
+          _vm._v("\n              Status\n            ")
+        ]),
         _vm._v(" "),
-        _c("th", [_vm._v("Edit")])
-      ])
-    ])
+        _c("div", { staticClass: "col-1" }, [
+          _vm._v("\n              Edit\n            ")
+        ])
+      ]
+    )
   },
   function() {
     var _vm = this
