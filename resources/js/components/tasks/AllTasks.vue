@@ -199,7 +199,7 @@
                                         <button v-show="!editmode" type="submit" class="btn btn-primary">Maak gebruiker aan</button>
                                     </div>
                                  </div>
-                                </form>
+                                </form> 
                             </div>
                     </div>
                 </div>
