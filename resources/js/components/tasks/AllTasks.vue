@@ -1,157 +1,154 @@
 <template>
-<div id="app">
-   <div class="col-12 ">
-            <div class="card mt-4">
-              <div class="card-header">
-                <h3 class="card-title">Open verzoeken</h3>
+<div id="app" class="verzoeken">
+   <div class="col-12 mt-4">
+     <div class="row">
+       <h1 class="verzoeken-title col-12">Open Verzoeken</h1>
+     </div>
+     <div class="row mt-4 baboon-green-bg p-4">
+       <div class="d-flex flex-row col-12 verzoeken-header pb-3">
+         <div class="col-2">
+           Wie pakt het op?
+         </div>
+         <div class="col-6">
+           Taak
+         </div>
+         <div class="col-2">
+           Date
+         </div>
+         <div class="col-1">
+           Status
+         </div>
+         <div class="col-1">
+           Edit
+         </div>
+       </div>
+       <div v-for="task in openTasks" :key="task.id" class="d-flex flex-row col-12 verzoeken-body">
+         <div class="col-2 profile-img">
+           <img v-bind:src="'/img/profile/' + task.user.photo" />{{ task.user.name }}
+         </div>
+         <div class="col-6">
+           {{ task.title }}
+         </div>
+         <div class="col-2">
+           {{ task.date | myDate }}
+         </div>
+         <div class="col-1 status">
+           {{ task.status }}
+         </div>
+         <div class="col-1">
+           <a href=# @click="editModal(task)">
+              <i class="fa fa-edit baboon"></i>
+          </a>
+          <a href="#" @click="deleteTask(task.id)">
+              <i class="fa fa-trash"></i>
+          </a>
+         </div>
+       </div>
 
-                <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
-                <table class="table table-hover text-nowrap">
-                  <thead>
-                    <tr>
-                      <th>Taak</th>
-                      <th>Wie pakt het op?</th>
-                      <th>Date</th>
-                      <th>Status</th>
-                      <th>Edit</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="task in openTasks" :key="task.id">
-                      <td>{{ task.title }}</td>
-                      <td>{{ task.user.name }}</td>
-                      <td>{{ task.date | myDate }}</td>
-                      <td><span class="tag tag-success">{{ task.status }}</span></td>
-                      <td>
-                            <a href=# @click="editModal(task)">
-                              <i class="fa fa-edit baboon"></i>
-                          </a>
-                          <a href="#" @click="deleteTask(task.id)">
-                              <i class="fa fa-trash"></i>
-                          </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
-               <div class="card-footer clearfix">
-                <button type="button" @click="newModal" class="btn btn-info float-right"><i class="fas fa-plus"></i> Add item</button>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Verzoeken in behandeling</h3>
-
-                <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
-                <table class="table table-hover text-nowrap">
-                  <thead>
-                    <tr>
-                      <th>Taak</th>
-                      <th>Wie pakt het op?</th>
-                      <th>Date</th>
-                      <th>Status</th>
-                      <th>Edit</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="task in busyTasks" :key="task.id">
-                      <td>{{ task.title }}</td>
-                      <td>{{ task.user.name }}</td>
-                      <td>{{ task.date | myDate }}</td>
-                      <td><span class="tag tag-success">{{ task.status }}</span></td>
-                      <td>
-                            <a href=# @click="editModal(task)">
-                              <i class="fa fa-edit baboon"></i>
-                          </a>
-                          <a href="#" @click="deleteTask(task.id)">
-                              <i class="fa fa-trash"></i>
-                          </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
-               <div class="card-footer clearfix">
-                <button type="button" @click="newModal" class="btn btn-info float-right"><i class="fas fa-plus"></i> Add item</button>
-              </div>
-            <!-- /.card -->
-          </div>
-           <div class="card">
-              <div class="card-header">
-                <h3 class="card-title">Voltooide verzoeken</h3>
-
-                <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body table-responsive p-0">
-                <table class="table table-hover text-nowrap">
-                  <thead>
-                    <tr>
-                      <th>Taak</th>
-                      <th>Wie pakt het op?</th>
-                      <th>Date</th>
-                      <th>Status</th>
-                      <th>Edit</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="task in closedTasks" :key="task.id">
-                      <td>{{ task.title }}</td>
-                      <td>{{ task.user.name }}</td>
-                      <td>{{ task.date | myDate }}</td>
-                      <td><span class="tag tag-success">{{ task.status }}</span></td>
-                      <td>
-                            <a href=# @click="editModal(task)">
-                              <i class="fa fa-edit baboon"></i>
-                          </a>
-                          <a href="#" @click="deleteTask(task.id)">
-                              <i class="fa fa-trash"></i>
-                          </a>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
-               <div class="card-footer clearfix">
-                <button type="button" @click="newModal" class="btn btn-info float-right"><i class="fas fa-plus"></i> Add item</button>
-              </div>
-            <!-- /.card -->
-          </div>
+     </div>
    </div>
-          
+
+      <div class="col-12 mt-4">
+        <div class="row">
+          <h1 class="verzoeken-title col-12">Verzoeken in behandeling</h1>
+        </div>
+        <div class="row mt-4 baboon-green-bg p-4">
+          <div class="d-flex flex-row col-12 verzoeken-header pb-3">
+            <div class="col-2">
+              Wie pakt het op?
+            </div>
+            <div class="col-6">
+              Taak
+            </div>
+            <div class="col-2">
+              Date
+            </div>
+            <div class="col-1">
+              Status
+            </div>
+            <div class="col-1">
+              Edit
+            </div>
+          </div>
+          <div v-for="task in busyTasks" :key="task.id" class="d-flex flex-row col-12 verzoeken-body">
+            <div class="col-2 profile-img">
+              <img v-bind:src="'/img/profile/' + task.user.photo" />{{ task.user.name }}
+            </div>
+            <div class="col-6">
+              {{ task.title }}
+            </div>
+            <div class="col-2">
+              {{ task.date | myDate }}
+            </div>
+            <div class="col-1 status">
+              {{ task.status }}
+            </div>
+            <div class="col-1">
+              <a href=# @click="editModal(task)">
+                  <i class="fa fa-edit baboon"></i>
+              </a>
+              <a href="#" @click="deleteTask(task.id)">
+                  <i class="fa fa-trash"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="col-12 mt-4">
+        <div class="row">
+          <h1 class="verzoeken-title col-12">Voltooide verzoeken</h1>
+        </div>
+        <div class="row mt-4 baboon-green-bg p-4">
+          <div class="d-flex flex-row col-12 verzoeken-header pb-3">
+            <div class="col-2">
+              Wie pakt het op?
+            </div>
+            <div class="col-6">
+              Taak
+            </div>
+            <div class="col-2">
+              Date
+            </div>
+            <div class="col-1">
+              Status
+            </div>
+            <div class="col-1">
+              Edit
+            </div>
+          </div>
+          <div v-for="task in closedTasks" :key="task.id" class="d-flex flex-row col-12 verzoeken-body">
+            <div class="col-2 profile-img">
+              <img v-bind:src="'/img/profile/' + task.user.photo" />{{ task.user.name }}
+            </div>
+            <div class="col-6">
+              {{ task.title }}
+            </div>
+            <div class="col-2">
+              {{ task.date | myDate }}
+            </div>
+            <div class="col-1 status">
+              {{ task.status }}
+            </div>
+            <div class="col-1">
+              <a href=# @click="editModal(task)">
+                  <i class="fa fa-edit baboon"></i>
+              </a>
+              <a href="#" @click="deleteTask(task.id)">
+                  <i class="fa fa-trash"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+     </div>
+              
+   
+        <button type="button" @click="newModal" class="add-right-button position-fixed right btn btn-info float-right"><i class="fas fa-plus"></i></button>
+
+    <!-- /.Start-modal -->
+
           <div class="modal" id="addNew" tabindex="-1" role="dialog">
                 <div class="col-md-12">
                     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -241,6 +238,7 @@ export default {
     }
   },
     methods : {
+
         loadTasks(){
                 if(this.$gate.isAdminOrAuthor()){
                     axios.get("api/allTasks").then(({ data }) => (this.tasks = data.data));
