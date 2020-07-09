@@ -205,6 +205,10 @@ body {
 
 
 @media only screen and (max-width: 800px) {
+    .container-fluid {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
     .header-logo {
         background: #35555d;
         display: flex;

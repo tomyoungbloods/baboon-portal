@@ -3989,6 +3989,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -69377,7 +69378,7 @@ var render = function() {
                   _vm._v("\n           " + _vm._s(task.title) + "\n         ")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-lg-2" }, [
+                _c("div", { staticClass: "col-lg-2 datum" }, [
                   _vm._v(
                     "\n           " +
                       _vm._s(_vm._f("myDate")(task.date)) +
@@ -69454,7 +69455,7 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-lg-2" }, [
+                _c("div", { staticClass: "col-lg-2 datum" }, [
                   _vm._v(
                     "\n              " +
                       _vm._s(_vm._f("myDate")(task.date)) +
@@ -69503,7 +69504,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "col-lg-12 mt-4" }, [
+    _c("div", { staticClass: "col-lg-12 mt-4 mb-4" }, [
       _vm._m(4),
       _vm._v(" "),
       _c(
@@ -69902,19 +69903,19 @@ var staticRenderFns = [
           _vm._v("\n           Wie pakt het op?\n         ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-5" }, [
+        _c("div", { staticClass: "col-lg-5 col-xs-12" }, [
           _vm._v("\n           Taak\n         ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-2" }, [
+        _c("div", { staticClass: "col-lg-2 col-xs-12" }, [
           _vm._v("\n           Date\n         ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-1" }, [
+        _c("div", { staticClass: "col-lg-1 col-xs-12" }, [
           _vm._v("\n           Status\n         ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-1" }, [
+        _c("div", { staticClass: "col-lg-1 col-xs-12" }, [
           _vm._v("\n           Edit\n         ")
         ])
       ]
@@ -69986,7 +69987,7 @@ var staticRenderFns = [
           _vm._v("\n              Taak\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-2" }, [
+        _c("div", { staticClass: "col-lg-2 datum" }, [
           _vm._v("\n              Date\n            ")
         ]),
         _vm._v(" "),

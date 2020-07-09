@@ -9,16 +9,16 @@
          <div class="col-lg-3">
            Wie pakt het op?
          </div>
-         <div class="col-lg-5">
+         <div class="col-lg-5 col-xs-12">
            Taak
          </div>
-         <div class="col-lg-2">
+         <div class="col-lg-2 col-xs-12">
            Date
          </div>
-         <div class="col-lg-1">
+         <div class="col-lg-1 col-xs-12">
            Status
          </div>
-         <div class="col-lg-1">
+         <div class="col-lg-1 col-xs-12">
            Edit
          </div>
        </div>
@@ -29,7 +29,7 @@
          <div class="col-lg-5">
            {{ task.title }}
          </div>
-         <div class="col-lg-2">
+         <div class="col-lg-2 datum">
            {{ task.date | myDate }}
          </div>
          <div class="col-lg-1 status">
@@ -77,7 +77,7 @@
             <div class="col-lg-5">
               {{ task.title }}
             </div>
-            <div class="col-lg-2">
+            <div class="col-lg-2 datum">
               {{ task.date | myDate }}
             </div>
             <div class="col-lg-1 status">
@@ -96,7 +96,7 @@
         </div>
       </div>
 
-      <div class="col-lg-12 mt-4">
+      <div class="col-lg-12 mt-4 mb-4">
         <div class="row">
           <h1 class="verzoeken-title col-lg-12">Voltooide verzoeken</h1>
         </div>
@@ -108,7 +108,7 @@
             <div class="col-lg-5">
               Taak
             </div>
-            <div class="col-lg-2">
+            <div class="col-lg-2 datum">
               Date
             </div>
             <div class="col-lg-1">
@@ -203,6 +203,7 @@
             </div>
 
 </div>
+
 
 
 
