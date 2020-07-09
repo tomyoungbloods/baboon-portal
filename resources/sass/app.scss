@@ -205,6 +205,18 @@ body {
 
 
 @media only screen and (max-width: 800px) {
+    .container-fluid{
+        padding: 5px 0px;
+    }
+
+    .p-4 {
+        padding: 0em !important;
+    }
+
+    .row{
+        background-color: #2F484E;
+    }
+
     .container-fluid {
         margin-top: 80px;
         margin-bottom: 80px;
@@ -222,12 +234,7 @@ body {
     .verzoeken-header {
         display: none !important;
     }
-    .verzoeken-body {
-        flex-direction: column !important;
-        justify-content: center !important;
-        align-items: center !important;
-        text-align: center  !important;
-    }
+    
     .verzoeken{
         .status {
             width: 150px;
@@ -243,6 +250,17 @@ body {
         .datum{
             font-size: 10px;
             margin-top: 12px;
+        }
+        .verzoeken-body {
+            flex-direction: column !important;
+            justify-content: center !important;
+            align-items: center !important;
+            text-align: center  !important;
+            background-color: #35555d !important;
+        }
+        button.add-right-button {
+            right: 15px;
+            bottom: 85px ;
         }
     }
 
@@ -268,6 +286,15 @@ body {
         p{
             font-size: 9px;
         }
+    }
+
+    .modal-content {
+        background: #35555d;
+        color: #fff;
+        border: none;
+    }
+    .modal-header {
+        border: none !important;
     }
     
   }

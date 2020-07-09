@@ -154,7 +154,7 @@
                     <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title">Overzicht Tasks</h5>
+                                    <h5 class="modal-title">Overzicht verzoeken</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                     </button>
@@ -165,6 +165,7 @@
                                         <input type="text" name="title" v-model="form.title" placeholder="Titel"
                                             class="form-control">
                                         <has-error :form="form" field="Task Title"></has-error>
+                                    </div>
                                         <!-- <input type="text" name="status" v-model="form.status" placeholder="Status"
                                             class="form-control">
                                         <has-error :form="form" field="Task status"></has-error> -->
@@ -189,11 +190,11 @@
                                           </div>
                                           <input type="text" v-model="form.date" class="form-control" data-inputmask-alias="datetime" placeholder="yyyy/mm/dd" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
                                       </div>
-                                    </div>
+                                    
 
                                     <div class="modal-footer">
                                         <button v-show="editmode" type="submit" class="btn btn-primary">Bewerk</button>
-                                        <button v-show="!editmode" type="submit" class="btn btn-primary">Maak gebruiker aan</button>
+                                        <button v-show="!editmode" type="submit" class="btn btn-primary">Voeg verzoek toe</button>
                                     </div>
                                  </div> 
                                 </form> 
