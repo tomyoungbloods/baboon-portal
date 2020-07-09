@@ -1,21 +1,19 @@
 {
-    "short_name": "Baboon",
-    "name": "Baboon Portal",
+    "name": "Recipe PWA",
+    "short_name": "Recipe PWA",
     "icons": [
-      {
-        "src": "./img/adem.png",
-        "type": "image/png",
-        "sizes": "192x192"
-      },
-      {
-        "src": "./img/adem.png",
-        "type": "image/png",
-        "sizes": "512x512"
-      }
+        {
+              "src": "/recipe-book.png",
+              "sizes": "192x192",
+              "type": "image/png"
+            }
     ],
-    "start_url": "/?utm_source=a2hs",
-    "background_color": "#35555d",
+    "start_url": "/",
+    "scope": ".",
     "display": "standalone",
-    "scope": "/",
-    "theme_color": "#35555d"
-  }
+    "background_color": "#fff",
+    "theme_color": "#000",
+    "description": "You favorite recipe app",
+    "dir": "ltr",
+    "lang": "en-US"
+}
