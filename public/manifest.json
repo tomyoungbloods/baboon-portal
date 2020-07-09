@@ -1,9 +1,9 @@
 {
-    "name": "Recipe PWA",
-    "short_name": "Recipe PWA",
+    "name": "Baboon",
+    "short_name": "Baboon Portal",
     "icons": [
         {
-              "src": "/recipe-book.png",
+              "src": "./img/adem.png",
               "sizes": "192x192",
               "type": "image/png"
             }
@@ -11,9 +11,9 @@
     "start_url": "/",
     "scope": ".",
     "display": "standalone",
-    "background_color": "#fff",
-    "theme_color": "#000",
-    "description": "You favorite recipe app",
+    "background_color": "nlue",
+    "theme_color": "red",
+    "description": "Welcome to the jungle",
     "dir": "ltr",
     "lang": "en-US"
 }
