@@ -144,6 +144,9 @@ const app = new Vue({
     data :{
       search: ''
     },
+    mode: {
+      mode: 'production'
+    },
     methods:{
       searchit: _.debounce(() => {
         Fire.$emit('searching'); //Create a event called searching
