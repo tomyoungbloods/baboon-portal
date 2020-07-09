@@ -3629,6 +3629,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -68592,7 +68593,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "verzoeken", attrs: { id: "app" } }, [
-    _c("div", { staticClass: "col-12 mt-4" }, [
+    _c("div", { staticClass: "col-lg-12 mt-4" }, [
       _vm._m(0),
       _vm._v(" "),
       _c(
@@ -68606,21 +68607,21 @@ var render = function() {
               "div",
               {
                 key: task.id,
-                staticClass: "d-flex flex-row col-12 verzoeken-body"
+                staticClass: "d-flex flex-row col-lg-12 verzoeken-body"
               },
               [
-                _c("div", { staticClass: "col-2 profile-img" }, [
+                _c("div", { staticClass: "col-lg-3 profile-img" }, [
                   _c("img", {
                     attrs: { src: "/img/profile/" + task.user.photo }
                   }),
                   _vm._v(_vm._s(task.user.name) + "\n         ")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-6" }, [
+                _c("div", { staticClass: "col-lg-5" }, [
                   _vm._v("\n           " + _vm._s(task.title) + "\n         ")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-2" }, [
+                _c("div", { staticClass: "col-lg-2" }, [
                   _vm._v(
                     "\n           " +
                       _vm._s(_vm._f("myDate")(task.date)) +
@@ -68628,11 +68629,11 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-1 status" }, [
+                _c("div", { staticClass: "col-lg-1 status" }, [
                   _vm._v("\n           " + _vm._s(task.status) + "\n         ")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-1" }, [
+                _c("div", { staticClass: "col-lg-1" }, [
                   _c(
                     "a",
                     {
@@ -68667,7 +68668,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "col-12 mt-4" }, [
+    _c("div", { staticClass: "col-lg-12 mt-4" }, [
       _vm._m(2),
       _vm._v(" "),
       _c(
@@ -68681,23 +68682,23 @@ var render = function() {
               "div",
               {
                 key: task.id,
-                staticClass: "d-flex flex-row col-12 verzoeken-body"
+                staticClass: "d-flex flex-row col-lg-12 verzoeken-body"
               },
               [
-                _c("div", { staticClass: "col-2 profile-img" }, [
+                _c("div", { staticClass: "col-lg-3 profile-img" }, [
                   _c("img", {
                     attrs: { src: "/img/profile/" + task.user.photo }
                   }),
                   _vm._v(_vm._s(task.user.name) + "\n            ")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-6" }, [
+                _c("div", { staticClass: "col-lg-5" }, [
                   _vm._v(
                     "\n              " + _vm._s(task.title) + "\n            "
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-2" }, [
+                _c("div", { staticClass: "col-lg-2" }, [
                   _vm._v(
                     "\n              " +
                       _vm._s(_vm._f("myDate")(task.date)) +
@@ -68705,13 +68706,13 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-1 status" }, [
+                _c("div", { staticClass: "col-lg-1 status" }, [
                   _vm._v(
                     "\n              " + _vm._s(task.status) + "\n            "
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-1" }, [
+                _c("div", { staticClass: "col-lg-1" }, [
                   _c(
                     "a",
                     {
@@ -68746,7 +68747,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "col-12 mt-4" }, [
+    _c("div", { staticClass: "col-lg-12 mt-4 mb-4" }, [
       _vm._m(4),
       _vm._v(" "),
       _c(
@@ -68760,23 +68761,23 @@ var render = function() {
               "div",
               {
                 key: task.id,
-                staticClass: "d-flex flex-row col-12 verzoeken-body"
+                staticClass: "d-flex flex-row col-lg-12 verzoeken-body"
               },
               [
-                _c("div", { staticClass: "col-2 profile-img" }, [
+                _c("div", { staticClass: "col-lg-3 profile-img" }, [
                   _c("img", {
                     attrs: { src: "/img/profile/" + task.user.photo }
                   }),
                   _vm._v(_vm._s(task.user.name) + "\n            ")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-6" }, [
+                _c("div", { staticClass: "col-lg-5" }, [
                   _vm._v(
                     "\n              " + _vm._s(task.title) + "\n            "
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-2" }, [
+                _c("div", { staticClass: "col-lg-2" }, [
                   _vm._v(
                     "\n              " +
                       _vm._s(_vm._f("myDate")(task.date)) +
@@ -68784,13 +68785,13 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-1 status" }, [
+                _c("div", { staticClass: "col-lg-1 status" }, [
                   _vm._v(
                     "\n              " + _vm._s(task.status) + "\n            "
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-1" }, [
+                _c("div", { staticClass: "col-lg-1" }, [
                   _c(
                     "a",
                     {
@@ -68843,7 +68844,7 @@ var render = function() {
         attrs: { id: "addNew", tabindex: "-1", role: "dialog" }
       },
       [
-        _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "col-lg-md-12" }, [
           _c(
             "div",
             {
@@ -69128,7 +69129,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("h1", { staticClass: "verzoeken-title col-12" }, [
+      _c("h1", { staticClass: "verzoeken-title col-lg-12" }, [
         _vm._v("Open Verzoeken")
       ])
     ])
@@ -69139,25 +69140,25 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "d-flex flex-row col-12 verzoeken-header pb-3" },
+      { staticClass: "d-flex flex-row col-lg-12 verzoeken-header pb-3" },
       [
-        _c("div", { staticClass: "col-2" }, [
+        _c("div", { staticClass: "col-lg-3" }, [
           _vm._v("\n           Wie pakt het op?\n         ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-6" }, [
+        _c("div", { staticClass: "col-lg-5" }, [
           _vm._v("\n           Taak\n         ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-2" }, [
+        _c("div", { staticClass: "col-lg-2" }, [
           _vm._v("\n           Date\n         ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-1" }, [
+        _c("div", { staticClass: "col-lg-1" }, [
           _vm._v("\n           Status\n         ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-1" }, [
+        _c("div", { staticClass: "col-lg-1" }, [
           _vm._v("\n           Edit\n         ")
         ])
       ]
@@ -69168,7 +69169,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("h1", { staticClass: "verzoeken-title col-12" }, [
+      _c("h1", { staticClass: "verzoeken-title col-lg-12" }, [
         _vm._v("Verzoeken in behandeling")
       ])
     ])
@@ -69179,25 +69180,25 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "d-flex flex-row col-12 verzoeken-header pb-3" },
+      { staticClass: "d-flex flex-row col-lg-12 verzoeken-header pb-3" },
       [
-        _c("div", { staticClass: "col-2" }, [
+        _c("div", { staticClass: "col-lg-3" }, [
           _vm._v("\n              Wie pakt het op?\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-6" }, [
+        _c("div", { staticClass: "col-lg-5" }, [
           _vm._v("\n              Taak\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-2" }, [
+        _c("div", { staticClass: "col-lg-2" }, [
           _vm._v("\n              Date\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-1" }, [
+        _c("div", { staticClass: "col-lg-1" }, [
           _vm._v("\n              Status\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-1" }, [
+        _c("div", { staticClass: "col-lg-1" }, [
           _vm._v("\n              Edit\n            ")
         ])
       ]
@@ -69208,7 +69209,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("h1", { staticClass: "verzoeken-title col-12" }, [
+      _c("h1", { staticClass: "verzoeken-title col-lg-12" }, [
         _vm._v("Voltooide verzoeken")
       ])
     ])
@@ -69219,25 +69220,25 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "d-flex flex-row col-12 verzoeken-header pb-3" },
+      { staticClass: "d-flex flex-row col-lg-12 verzoeken-header pb-3" },
       [
-        _c("div", { staticClass: "col-2" }, [
+        _c("div", { staticClass: "col-lg-3" }, [
           _vm._v("\n              Wie pakt het op?\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-6" }, [
+        _c("div", { staticClass: "col-lg-5" }, [
           _vm._v("\n              Taak\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-2" }, [
+        _c("div", { staticClass: "col-lg-2" }, [
           _vm._v("\n              Date\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-1" }, [
+        _c("div", { staticClass: "col-lg-1" }, [
           _vm._v("\n              Status\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-1" }, [
+        _c("div", { staticClass: "col-lg-1" }, [
           _vm._v("\n              Edit\n            ")
         ])
       ]
@@ -69297,7 +69298,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "verzoeken", attrs: { id: "app" } }, [
-    _c("div", { staticClass: "col-12 mt-4" }, [
+    _c("div", { staticClass: "col-lg-12 mt-4" }, [
       _vm._m(0),
       _vm._v(" "),
       _c(
@@ -69311,21 +69312,21 @@ var render = function() {
               "div",
               {
                 key: task.id,
-                staticClass: "d-flex flex-row col-12 verzoeken-body"
+                staticClass: "d-flex flex-row col-lg-12 verzoeken-body"
               },
               [
-                _c("div", { staticClass: "col-2 profile-img" }, [
+                _c("div", { staticClass: "col-lg-3 profile-img" }, [
                   _c("img", {
                     attrs: { src: "/img/profile/" + task.user.photo }
                   }),
                   _vm._v(_vm._s(task.user.name) + "\n         ")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-6" }, [
+                _c("div", { staticClass: "col-lg-5" }, [
                   _vm._v("\n           " + _vm._s(task.title) + "\n         ")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-2" }, [
+                _c("div", { staticClass: "col-lg-2" }, [
                   _vm._v(
                     "\n           " +
                       _vm._s(_vm._f("myDate")(task.date)) +
@@ -69333,11 +69334,11 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-1 status" }, [
+                _c("div", { staticClass: "col-lg-1 status" }, [
                   _vm._v("\n           " + _vm._s(task.status) + "\n         ")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-1" }, [
+                _c("div", { staticClass: "col-lg-1" }, [
                   _c(
                     "a",
                     {
@@ -69372,7 +69373,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "col-12 mt-4" }, [
+    _c("div", { staticClass: "col-lg-12 mt-4" }, [
       _vm._m(2),
       _vm._v(" "),
       _c(
@@ -69386,23 +69387,23 @@ var render = function() {
               "div",
               {
                 key: task.id,
-                staticClass: "d-flex flex-row col-12 verzoeken-body"
+                staticClass: "d-flex flex-row col-lg-12 verzoeken-body"
               },
               [
-                _c("div", { staticClass: "col-2 profile-img" }, [
+                _c("div", { staticClass: "col-lg-3 profile-img" }, [
                   _c("img", {
                     attrs: { src: "/img/profile/" + task.user.photo }
                   }),
                   _vm._v(_vm._s(task.user.name) + "\n            ")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-6" }, [
+                _c("div", { staticClass: "col-lg-5" }, [
                   _vm._v(
                     "\n              " + _vm._s(task.title) + "\n            "
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-2" }, [
+                _c("div", { staticClass: "col-lg-2" }, [
                   _vm._v(
                     "\n              " +
                       _vm._s(_vm._f("myDate")(task.date)) +
@@ -69410,13 +69411,13 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-1 status" }, [
+                _c("div", { staticClass: "col-lg-1 status" }, [
                   _vm._v(
                     "\n              " + _vm._s(task.status) + "\n            "
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-1" }, [
+                _c("div", { staticClass: "col-lg-1" }, [
                   _c(
                     "a",
                     {
@@ -69451,7 +69452,7 @@ var render = function() {
       )
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "col-12 mt-4" }, [
+    _c("div", { staticClass: "col-lg-12 mt-4" }, [
       _vm._m(4),
       _vm._v(" "),
       _c(
@@ -69465,23 +69466,23 @@ var render = function() {
               "div",
               {
                 key: task.id,
-                staticClass: "d-flex flex-row col-12 verzoeken-body"
+                staticClass: "d-flex flex-row col-lg-12 verzoeken-body"
               },
               [
-                _c("div", { staticClass: "col-2 profile-img" }, [
+                _c("div", { staticClass: "col-lg-3 profile-img" }, [
                   _c("img", {
                     attrs: { src: "/img/profile/" + task.user.photo }
                   }),
                   _vm._v(_vm._s(task.user.name) + "\n            ")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-6" }, [
+                _c("div", { staticClass: "col-lg-5" }, [
                   _vm._v(
                     "\n              " + _vm._s(task.title) + "\n            "
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-2" }, [
+                _c("div", { staticClass: "col-lg-2" }, [
                   _vm._v(
                     "\n              " +
                       _vm._s(_vm._f("myDate")(task.date)) +
@@ -69489,13 +69490,13 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-1 status" }, [
+                _c("div", { staticClass: "col-lg-1 status" }, [
                   _vm._v(
                     "\n              " + _vm._s(task.status) + "\n            "
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-1" }, [
+                _c("div", { staticClass: "col-lg-1" }, [
                   _c(
                     "a",
                     {
@@ -69548,7 +69549,7 @@ var render = function() {
         attrs: { id: "addNew", tabindex: "-1", role: "dialog" }
       },
       [
-        _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "col-lg-md-12" }, [
           _c(
             "div",
             {
@@ -69833,7 +69834,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("h1", { staticClass: "verzoeken-title col-12" }, [
+      _c("h1", { staticClass: "verzoeken-title col-lg-12" }, [
         _vm._v("Open Verzoeken")
       ])
     ])
@@ -69844,25 +69845,25 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "d-flex flex-row col-12 verzoeken-header pb-3" },
+      { staticClass: "d-flex flex-row col-lg-12 verzoeken-header pb-3" },
       [
-        _c("div", { staticClass: "col-2" }, [
+        _c("div", { staticClass: "col-lg-3" }, [
           _vm._v("\n           Wie pakt het op?\n         ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-6" }, [
+        _c("div", { staticClass: "col-lg-5" }, [
           _vm._v("\n           Taak\n         ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-2" }, [
+        _c("div", { staticClass: "col-lg-2" }, [
           _vm._v("\n           Date\n         ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-1" }, [
+        _c("div", { staticClass: "col-lg-1" }, [
           _vm._v("\n           Status\n         ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-1" }, [
+        _c("div", { staticClass: "col-lg-1" }, [
           _vm._v("\n           Edit\n         ")
         ])
       ]
@@ -69873,7 +69874,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("h1", { staticClass: "verzoeken-title col-12" }, [
+      _c("h1", { staticClass: "verzoeken-title col-lg-12" }, [
         _vm._v("Verzoeken in behandeling")
       ])
     ])
@@ -69884,25 +69885,25 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "d-flex flex-row col-12 verzoeken-header pb-3" },
+      { staticClass: "d-flex flex-row col-lg-12 verzoeken-header pb-3" },
       [
-        _c("div", { staticClass: "col-2" }, [
+        _c("div", { staticClass: "col-lg-3" }, [
           _vm._v("\n              Wie pakt het op?\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-6" }, [
+        _c("div", { staticClass: "col-lg-5" }, [
           _vm._v("\n              Taak\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-2" }, [
+        _c("div", { staticClass: "col-lg-2" }, [
           _vm._v("\n              Date\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-1" }, [
+        _c("div", { staticClass: "col-lg-1" }, [
           _vm._v("\n              Status\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-1" }, [
+        _c("div", { staticClass: "col-lg-1" }, [
           _vm._v("\n              Edit\n            ")
         ])
       ]
@@ -69913,7 +69914,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "row" }, [
-      _c("h1", { staticClass: "verzoeken-title col-12" }, [
+      _c("h1", { staticClass: "verzoeken-title col-lg-12" }, [
         _vm._v("Voltooide verzoeken")
       ])
     ])
@@ -69924,25 +69925,25 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "d-flex flex-row col-12 verzoeken-header pb-3" },
+      { staticClass: "d-flex flex-row col-lg-12 verzoeken-header pb-3" },
       [
-        _c("div", { staticClass: "col-2" }, [
+        _c("div", { staticClass: "col-lg-3" }, [
           _vm._v("\n              Wie pakt het op?\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-6" }, [
+        _c("div", { staticClass: "col-lg-5" }, [
           _vm._v("\n              Taak\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-2" }, [
+        _c("div", { staticClass: "col-lg-2" }, [
           _vm._v("\n              Date\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-1" }, [
+        _c("div", { staticClass: "col-lg-1" }, [
           _vm._v("\n              Status\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-1" }, [
+        _c("div", { staticClass: "col-lg-1" }, [
           _vm._v("\n              Edit\n            ")
         ])
       ]

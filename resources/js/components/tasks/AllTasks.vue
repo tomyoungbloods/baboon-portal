@@ -1,41 +1,41 @@
 <template>
 <div id="app" class="verzoeken">
-   <div class="col-12 mt-4">
+   <div class="col-lg-12 mt-4">
      <div class="row">
-       <h1 class="verzoeken-title col-12">Open Verzoeken</h1>
+       <h1 class="verzoeken-title col-lg-12">Open Verzoeken</h1>
      </div>
      <div class="row mt-4 baboon-green-bg p-4">
-       <div class="d-flex flex-row col-12 verzoeken-header pb-3">
-         <div class="col-2">
+       <div class="d-flex flex-row col-lg-12 verzoeken-header pb-3">
+         <div class="col-lg-3">
            Wie pakt het op?
          </div>
-         <div class="col-6">
+         <div class="col-lg-5">
            Taak
          </div>
-         <div class="col-2">
+         <div class="col-lg-2">
            Date
          </div>
-         <div class="col-1">
+         <div class="col-lg-1">
            Status
          </div>
-         <div class="col-1">
+         <div class="col-lg-1">
            Edit
          </div>
        </div>
-       <div v-for="task in openTasks" :key="task.id" class="d-flex flex-row col-12 verzoeken-body">
-         <div class="col-2 profile-img">
+       <div v-for="task in openTasks" :key="task.id" class="d-flex flex-row col-lg-12 verzoeken-body">
+         <div class="col-lg-3 profile-img">
            <img v-bind:src="'/img/profile/' + task.user.photo" />{{ task.user.name }}
          </div>
-         <div class="col-6">
+         <div class="col-lg-5">
            {{ task.title }}
          </div>
-         <div class="col-2">
+         <div class="col-lg-2">
            {{ task.date | myDate }}
          </div>
-         <div class="col-1 status">
+         <div class="col-lg-1 status">
            {{ task.status }}
          </div>
-         <div class="col-1">
+         <div class="col-lg-1">
            <a href=# @click="editModal(task)">
               <i class="fa fa-edit baboon"></i>
           </a>
@@ -48,42 +48,42 @@
      </div>
    </div>
 
-      <div class="col-12 mt-4">
+      <div class="col-lg-12 mt-4">
         <div class="row">
-          <h1 class="verzoeken-title col-12">Verzoeken in behandeling</h1>
+          <h1 class="verzoeken-title col-lg-12">Verzoeken in behandeling</h1>
         </div>
         <div class="row mt-4 baboon-green-bg p-4">
-          <div class="d-flex flex-row col-12 verzoeken-header pb-3">
-            <div class="col-2">
+          <div class="d-flex flex-row col-lg-12 verzoeken-header pb-3">
+            <div class="col-lg-3">
               Wie pakt het op?
             </div>
-            <div class="col-6">
+            <div class="col-lg-5">
               Taak
             </div>
-            <div class="col-2">
+            <div class="col-lg-2">
               Date
             </div>
-            <div class="col-1">
+            <div class="col-lg-1">
               Status
             </div>
-            <div class="col-1">
+            <div class="col-lg-1">
               Edit
             </div>
           </div>
-          <div v-for="task in busyTasks" :key="task.id" class="d-flex flex-row col-12 verzoeken-body">
-            <div class="col-2 profile-img">
+          <div v-for="task in busyTasks" :key="task.id" class="d-flex flex-row col-lg-12 verzoeken-body">
+            <div class="col-lg-3 profile-img">
               <img v-bind:src="'/img/profile/' + task.user.photo" />{{ task.user.name }}
             </div>
-            <div class="col-6">
+            <div class="col-lg-5">
               {{ task.title }}
             </div>
-            <div class="col-2">
+            <div class="col-lg-2">
               {{ task.date | myDate }}
             </div>
-            <div class="col-1 status">
+            <div class="col-lg-1 status">
               {{ task.status }}
             </div>
-            <div class="col-1">
+            <div class="col-lg-1">
               <a href=# @click="editModal(task)">
                   <i class="fa fa-edit baboon"></i>
               </a>
@@ -96,42 +96,42 @@
         </div>
       </div>
 
-      <div class="col-12 mt-4">
+      <div class="col-lg-12 mt-4 mb-4">
         <div class="row">
-          <h1 class="verzoeken-title col-12">Voltooide verzoeken</h1>
+          <h1 class="verzoeken-title col-lg-12">Voltooide verzoeken</h1>
         </div>
         <div class="row mt-4 baboon-green-bg p-4">
-          <div class="d-flex flex-row col-12 verzoeken-header pb-3">
-            <div class="col-2">
+          <div class="d-flex flex-row col-lg-12 verzoeken-header pb-3">
+            <div class="col-lg-3">
               Wie pakt het op?
             </div>
-            <div class="col-6">
+            <div class="col-lg-5">
               Taak
             </div>
-            <div class="col-2">
+            <div class="col-lg-2">
               Date
             </div>
-            <div class="col-1">
+            <div class="col-lg-1">
               Status
             </div>
-            <div class="col-1">
+            <div class="col-lg-1">
               Edit
             </div>
           </div>
-          <div v-for="task in closedTasks" :key="task.id" class="d-flex flex-row col-12 verzoeken-body">
-            <div class="col-2 profile-img">
+          <div v-for="task in closedTasks" :key="task.id" class="d-flex flex-row col-lg-12 verzoeken-body">
+            <div class="col-lg-3 profile-img">
               <img v-bind:src="'/img/profile/' + task.user.photo" />{{ task.user.name }}
             </div>
-            <div class="col-6">
+            <div class="col-lg-5">
               {{ task.title }}
             </div>
-            <div class="col-2">
+            <div class="col-lg-2">
               {{ task.date | myDate }}
             </div>
-            <div class="col-1 status">
+            <div class="col-lg-1 status">
               {{ task.status }}
             </div>
-            <div class="col-1">
+            <div class="col-lg-1">
               <a href=# @click="editModal(task)">
                   <i class="fa fa-edit baboon"></i>
               </a>
@@ -150,7 +150,7 @@
     <!-- /.Start-modal -->
 
           <div class="modal" id="addNew" tabindex="-1" role="dialog">
-                <div class="col-md-12">
+                <div class="col-lg-md-12">
                     <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -203,6 +203,7 @@
             </div>
 
 </div>
+
 
 
 
