@@ -3,12 +3,12 @@
     "name": "Baboon Portal",
     "icons": [
       {
-        "src": "/img/adem.png",
+        "src": "./img/adem.png",
         "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "/img/adem.png",
+        "src": "./img/adem.png",
         "type": "image/png",
         "sizes": "512x512"
       }
