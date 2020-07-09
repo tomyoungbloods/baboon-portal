@@ -12,7 +12,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   <title>Baboon Portal</title>
-
+  <link rel="manifest" href="manifest.json" />
  <link rel="stylesheet" href="/css/app.css">
 </head>
 <body class="hold-transition sidebar-mini">
@@ -213,6 +213,14 @@ window.user = @json(auth()->user());
 
 </script>
 @endauth
+<script>
+if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js');
+            });
+        }
+
+</script>
 
 <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
