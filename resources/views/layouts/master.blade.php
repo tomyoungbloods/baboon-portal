@@ -19,7 +19,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper" id="app">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light d-none d-sm-block">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a href="#" class="nav-link" data-widget="pushmenu"><i class="fa fa-bars"></i></a>
@@ -40,9 +40,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   
   </nav>
   <!-- /.navbar -->
-
+  <div class="d-flex d-sm-none flex-row fixed-top header-logo">
+    <img src="./img/Logo Wit.png">
+  </div>
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4 baboon-dark-bg">
+  <aside class="main-sidebar sidebar-dark-primary elevation-4 baboon-dark-bg d-none d-sm-block">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
       <img src="./img/Logo Wit.png" alt="Baboon Logo" class="brand-image img-circle elevation-3"
@@ -65,7 +67,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div>
 
       <!-- Sidebar Menu -->
-      <nav class="mt-2">
+      <nav class="mt-2 d-none d-sm-block">
         @can('isAdmin')
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
@@ -177,6 +179,34 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
     <!-- /.sidebar -->
   </aside>
+
+  <div class="d-flex d-sm-none flex-row bottom-menu fixed-bottom">
+    <div class="col-4">
+      <router-link to="/dashboard">
+        <i class="nav-icon fas fa-tachometer-alt"></i>
+        <p>
+          Dashboard
+        </p>
+      </router-link>
+    </div>
+    <div class="col-4">
+      <router-link to="/mijnverzoeken">
+        <i class="nav-icon fas fa-tasks"></i>
+        <p>
+          Mijn verzoeken
+        </p>
+      </router-link>
+    </div>
+    <div class="col-4">
+      <router-link to="/alleverzoeken">
+        <i class="nav-icon fas fa-tasks"></i>
+        <p>
+          Overzicht Taks
+        </p>
+      </router-link>
+    </div>
+       
+  </div>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">

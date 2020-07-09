@@ -48418,3 +48418,69 @@ body {
   font-size: 10px;
 }
 
+@media only screen and (max-width: 800px) {
+  .header-logo {
+    background: #35555d;
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-logo img {
+    width: 60px;
+  }
+
+  .verzoeken-header {
+    display: none !important;
+  }
+
+  .verzoeken-body {
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .verzoeken .status {
+    width: 150px;
+    height: 36px;
+    margin: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .verzoeken .profile-img {
+    margin: 20px 0;
+  }
+
+  .verzoeken .datum {
+    font-size: 10px;
+    margin-top: 12px;
+  }
+
+  .bottom-menu .col-4 {
+    background: #35555d;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  }
+
+  .bottom-menu a {
+    color: #D6E74D;
+    padding-top: 10px;
+    width: 100%;
+    font-family: "anton";
+  }
+
+  .bottom-menu .col-lg-3.profile-img {
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .bottom-menu p {
+    font-size: 9px;
+  }
+}
+

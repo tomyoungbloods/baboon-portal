@@ -65769,16 +65769,18 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c(
-      "div",
-      { staticClass: "row justify-content-center" },
-      [_c("not-found")],
-      1
-    )
-  ])
+  return _vm._m(0)
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("div", { staticClass: "row justify-content-center" })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -68670,7 +68672,7 @@ var render = function() {
                   _vm._v("\n           " + _vm._s(task.title) + "\n         ")
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-lg-2" }, [
+                _c("div", { staticClass: "col-lg-2 datum" }, [
                   _vm._v(
                     "\n           " +
                       _vm._s(_vm._f("myDate")(task.date)) +
@@ -68747,7 +68749,7 @@ var render = function() {
                   )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-lg-2" }, [
+                _c("div", { staticClass: "col-lg-2 datum" }, [
                   _vm._v(
                     "\n              " +
                       _vm._s(_vm._f("myDate")(task.date)) +
@@ -69195,19 +69197,19 @@ var staticRenderFns = [
           _vm._v("\n           Wie pakt het op?\n         ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-5" }, [
+        _c("div", { staticClass: "col-lg-5 col-xs-12" }, [
           _vm._v("\n           Taak\n         ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-2" }, [
+        _c("div", { staticClass: "col-lg-2 col-xs-12" }, [
           _vm._v("\n           Date\n         ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-1" }, [
+        _c("div", { staticClass: "col-lg-1 col-xs-12" }, [
           _vm._v("\n           Status\n         ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-1" }, [
+        _c("div", { staticClass: "col-lg-1 col-xs-12" }, [
           _vm._v("\n           Edit\n         ")
         ])
       ]
@@ -69279,7 +69281,7 @@ var staticRenderFns = [
           _vm._v("\n              Taak\n            ")
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "col-lg-2" }, [
+        _c("div", { staticClass: "col-lg-2 datum" }, [
           _vm._v("\n              Date\n            ")
         ]),
         _vm._v(" "),
@@ -85429,6 +85431,9 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   router: router,
   data: {
     search: ''
+  },
+  mode: {
+    mode: 'production'
   },
   methods: {
     searchit: _.debounce(function () {
