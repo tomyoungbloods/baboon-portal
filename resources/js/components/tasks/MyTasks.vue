@@ -185,13 +185,11 @@
                                           <has-error :form="form" field="status"></has-error>
                                         </div>
                                         <div class="input-group">
-                                          <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
-                                          </div>
-                                          <input type="text" v-model="form.date" class="form-control" data-inputmask-alias="datetime" placeholder="yyyy/mm/dd" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
+                                          <date-picker v-model="form.date" valueType="format"></date-picker>
                                       </div>
+                                      
                                     
-
+                                        
                                     <div class="modal-footer">
                                         <button v-show="editmode" type="submit" class="btn btn-primary">Bewerk</button>
                                         <button v-show="!editmode" type="submit" class="btn btn-primary">Voeg verzoek toe</button>
@@ -212,7 +210,11 @@
 </template>
 
 <script>
+import DatePicker from 'vue2-datepicker';
+import 'vue2-datepicker/index.css';
+
 export default {
+  components: { DatePicker },
     data () {
         return {
             editmode: false,
