@@ -9,7 +9,7 @@ require('admin-lte');
 
 import Vue from 'vue';
 import moment from 'moment'
-import VCalendar from 'v-calendar';
+import vuetify from '../../src/plugins/vuetify'
 import VueProgressBar from 'vue-progressbar'
 import VueRouter from 'vue-router'
 window.Vue = require('vue');
@@ -19,6 +19,7 @@ import Users from './components/Users';
 import Developer from './components/Developer';
 import MyTasks from './components/tasks/MyTasks';
 import AllTasks from './components/tasks/AllTasks';
+
 
 
 import Gate from "./Gate";
@@ -70,8 +71,6 @@ const options = {
   }
   
   Vue.use(VueProgressBar, options)
-
-  Vue.use(VCalendar)
 
 
 
@@ -145,6 +144,7 @@ Vue.component(
 const app = new Vue({
     el: '#app',
     router,
+    vuetify,
     data :{
       search: ''
     },
