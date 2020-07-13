@@ -117,7 +117,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <router-link to="/alleverzoeken" class="nav-link">
                 <i class="nav-icon fas fas fa-tasks"></i>
                 <p>
-                  Overzicht Taks
+                  Overzicht Tasks
                 </p>
               </router-link>
             </li>
@@ -217,7 +217,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <router-link to="/alleverzoeken">
         <i class="nav-icon fas fa-tasks"></i>
         <p>
-          Overzicht Taks
+          Overzicht Tasks
         </p>
       </router-link>
     </div>
