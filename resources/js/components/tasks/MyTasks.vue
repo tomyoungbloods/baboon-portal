@@ -188,7 +188,16 @@
                                           <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
                                           </div>
-                                          <input type="text" v-model="form.date" class="form-control" data-inputmask-alias="datetime" placeholder="yyyy/mm/dd" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false">
+                                          <!-- <input type="text" v-model="form.date" class="form-control" data-inputmask-alias="datetime" placeholder="yyyy/mm/dd" data-inputmask-inputformat="dd/mm/yyyy" data-mask="" im-insert="false"> -->
+                                          <v-date-picker
+                                          v-model="form.date"
+                                          mode="single"
+                                          data="DD-MM-YY"
+                                          color="red"
+                                          is-dark
+                                          is-inline
+                                          />
+                                          
                                       </div>
                                     
 
@@ -212,6 +221,7 @@
 </template>
 
 <script>
+
 export default {
     data () {
         return {

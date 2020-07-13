@@ -9,6 +9,7 @@ require('admin-lte');
 
 import Vue from 'vue';
 import moment from 'moment'
+import VCalendar from 'v-calendar';
 import VueProgressBar from 'vue-progressbar'
 import VueRouter from 'vue-router'
 window.Vue = require('vue');
@@ -50,6 +51,8 @@ const toast = swal.mixin({
 
   window.toast = toast;
 
+
+
 // Progress Bar
 
 const options = {
@@ -68,6 +71,7 @@ const options = {
   
   Vue.use(VueProgressBar, options)
 
+  Vue.use(VCalendar)
 
 
 
