@@ -159,6 +159,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </router-link>
             </li>
             <li class="nav-item">
+              <router-link to="/mijnverzoeken" class="nav-link">
+                <i class="nav-icon fas fas fa-tasks"></i>
+                <p>
+                  Mijn verzoeken
+                </p>
+              </router-link>
+            </li>
+            {{-- <li class="nav-item">
+              <router-link to="/alleverzoeken" class="nav-link">
+                <i class="nav-icon fas fas fa-tasks"></i>
+                <p>
+                  Overzicht Taks
+                </p>
+              </router-link>
+            </li> --}}
+            <li class="nav-item">
               <a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                               document.getElementById('logout-form').submit();">
