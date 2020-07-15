@@ -13,12 +13,20 @@ $fa-font-path: "../webfonts";
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 @import '~admin-lte/dist/css/adminlte.css';
+@import '~vuetify/dist/vuetify.min.css';
 
-
+@import '~@mdi/font/css/materialdesignicons.min.css';
 @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
 @import "~@fortawesome/fontawesome-free/scss/brands.scss";
 
+.container {
+    max-width: 1920px;
+    background-color: #2F484E;
+  }
+  .theme--light.v-application {
+    background-color: #2F484E !important;
+  }
 
 .router-link-active {
     color: #35555d !important;
@@ -119,6 +127,9 @@ body {
         padding: 6px;
         color: #fff;
         font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .verzoeken-body:hover{
         background-color: rgba(0, 0, 0, 0.075);
@@ -142,11 +153,6 @@ body {
     }
     thead tr {
         color: #D6E74D;
-    }
-
-    tbody tr {
-        background: #2F484E;
-        border-bottom: 10px solid #35555d;
     }
 
     tbody td{
@@ -198,6 +204,7 @@ body {
         align-items: center;
         text-transform: uppercase;
         font-size: 10px;
+        height: 40px;
     }
 
 }
@@ -230,10 +237,14 @@ body {
             height: 60px;
         }
     }
+    .v-application--wrap {
 
-    .verzoeken-header {
+
+    .d-flex.flex-row.col-lg-12.verzoeken-header.pb-3 {
         display: none !important;
     }
+    }
+
     
     .verzoeken{
         .status {
@@ -251,7 +262,7 @@ body {
             font-size: 10px;
             margin-top: 12px;
         }
-        .verzoeken-body {
+        .d-flex.flex-row.verzoeken-body {
             flex-direction: column !important;
             justify-content: center !important;
             align-items: center !important;

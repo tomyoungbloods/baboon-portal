@@ -9,6 +9,7 @@ require('admin-lte');
 
 import Vue from 'vue';
 import moment from 'moment'
+import vuetify from '../../src/vuetify/plugins'
 import VueProgressBar from 'vue-progressbar'
 import VueRouter from 'vue-router'
 window.Vue = require('vue');
@@ -140,6 +141,7 @@ Vue.component(
 
 const app = new Vue({
     el: '#app',
+    vuetify,
     router,
     data :{
       search: ''
