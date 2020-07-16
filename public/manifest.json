@@ -1,35 +1,35 @@
 {
-    "short_name": "Arrivals",
-    "name": "Arrivals at Sky High",
+    "short_name": "Baboon Branding",
+    "name": "Baboon Branding Portal",
     "description": "Progressive web application demonstration",
     "icons": [
         {
-            "src": "https://portal.baboonbranding.nl/img/profile/1594191530.png",
+            "src": "./img/profile/1594191530.png",
             "sizes": "48x48",
             "type": "image/png"
         },
         {
-            "src": "https://portal.baboonbranding.nl/img/profile/1594191530.png",
+            "src": "./img/profile/1594191530.png",
             "sizes": "96x96",
             "type": "image/png"
         },
         {
-            "src": "https://portal.baboonbranding.nl/img/profile/1594191530.png",
+            "src": "./img/profile/1594191530.png",
             "sizes": "144x144",
             "type": "image/png"
         },
         {
-            "src": "https://portal.baboonbranding.nl/img/profile/1594191530.png",
+            "src": "./img/profile/1594191530.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "https://portal.baboonbranding.nl/img/profile/1594191530.png",
+            "src": "./img/profile/1594191530.png",
             "sizes": "256x256",
             "type": "image/png"
         }
     ],
-    "start_url": "./?utm_source=web_app_manifest",
+    "start_url": "/",
     "display": "standalone",
     "orientation": "portrait",
     "theme_color": "#29BDBB",
