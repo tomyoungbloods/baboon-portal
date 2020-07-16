@@ -1,30 +1,30 @@
 {
-    "short_name": "Baboon Branding",
+    "short_name": "Baboona Branding",
     "name": "Baboon Branding Portal",
     "description": "Progressive web application demonstration",
     "icons": [
         {
-            "src": "./img/profile/1592918704.png",
+            "src": "/img/profile/1592918704.png",
             "sizes": "48x48",
             "type": "image/png"
         },
         {
-            "src": "./img/profile/1592918704.png",
+            "src": "/img/profile/1592918704.png",
             "sizes": "96x96",
             "type": "image/png"
         },
         {
-            "src": "./img/profile/1592918704.png",
+            "src": "/img/profile/1592918704.png",
             "sizes": "144x144",
             "type": "image/png"
         },
         {
-            "src": "./img/profile/1592918704.png",
+            "src": "/img/profile/1592918704.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "./img/profile/1592918704.png",
+            "src": "/img/profile/1592918704.png",
             "sizes": "256x256",
             "type": "image/png"
         }
