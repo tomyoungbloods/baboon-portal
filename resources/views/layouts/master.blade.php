@@ -259,14 +259,13 @@ window.user = @json(auth()->user());
 
 </script>
 @endauth
-{{-- <script>
+<script>
 if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js');
             });
         }
-
-</script> --}}
+</script>
 
 <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
