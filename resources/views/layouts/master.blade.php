@@ -13,6 +13,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="theme-color" content="#35555d" />
   <title>Baboon Portal</title>
   <link rel="manifest" href="./manifest.json" />
+  <link rel="apple-touch-icon" href="https://cdn.glitch.com/49d34dc6-8fbd-46bb-8221-b99ffd36f1af%2Ftouchicon-180.png?v=1566411949736">
  <link rel="stylesheet" href="/css/app.css">
 </head>
 <body class="hold-transition sidebar-mini">
