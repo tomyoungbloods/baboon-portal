@@ -10,7 +10,7 @@
     ],
     "start_url": "/",
     "scope": ".",
-    "display": "standalone",
+    "display": "standalone", 
     "background_color": "#fff",
     "theme_color": "#000",
     "description": "You favorite recipe app",
