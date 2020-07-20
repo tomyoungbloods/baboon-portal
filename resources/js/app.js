@@ -12,7 +12,6 @@ import moment from 'moment'
 import vuetify from '../../src/vuetify/plugins'
 import VueProgressBar from 'vue-progressbar'
 import VueRouter from 'vue-router'
-import * as firebase from "firebase";
 window.Vue = require('vue');
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
@@ -134,47 +133,6 @@ Vue.component(
   require('./components/NotFound.vue').default
 );
 
-var config = {
-    apiKey: "AIzaSyBtLvHr2gYFVMdad8JmtUeLUATc1TV4qFI",
-    authDomain: "portal-baboon.firebaseapp.com",
-    databaseURL: "https://portal-baboon.firebaseio.com",
-    projectId: "portal-baboon",
-    storageBucket: "portal-baboon.appspot.com",
-    messagingSenderId: "172957971468",
-    appId: "1:172957971468:web:34c41d3f1c771b1b8faa29",
-    measurementId: "G-8QVGKVYDKZ"
-}; // 4. Get Firebase Configuration
-firebase.initializeApp(config);
-
-const messaging = firebase.messaging();
-
-messaging.usePublicVapidKey("BDPgYQqbP7s-D_sCDINZQA0p5HHxmv7YyOOca9CpaRaZlZgfcSsQcmXnuRTCa7bwCHnxBqTWF2qkidFfaX0DrRc"); // 1. Generate a new key pair
-
-// Request Permission of Notifications
-messaging.requestPermission().then(() => {
-  console.log('Notification permission granted.');
-
-  // Get Token
-  messaging.getToken().then((token) => {
-    console.log(token)
-  })
-}).catch((err) => {
-  console.log('Unable to get permission to notify.', err);
-});
-
-messaging.usePublicVapidKey("xxxxxxx"); // 1. Generate a new key pair
-
-// Request Permission of Notifications
-messaging.requestPermission().then(() => {
-  console.log('Notification permission granted.');
-
-  // Get Token
-  messaging.getToken().then((token) => {
-    console.log(token)
-  })
-}).catch((err) => {
-  console.log('Unable to get permission to notify.', err);
-});
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
