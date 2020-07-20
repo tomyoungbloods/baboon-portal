@@ -156,7 +156,7 @@ messaging.requestPermission().then(() => {
 
   // Get Token
   messaging.getToken().then((token) => {
-    console.log(token) 
+    console.log(token)
   })
 }).catch((err) => {
   console.log('Unable to get permission to notify.', err);
