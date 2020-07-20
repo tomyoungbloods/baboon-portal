@@ -13,6 +13,7 @@ import vuetify from '../../src/vuetify/plugins'
 import VueProgressBar from 'vue-progressbar'
 import VueRouter from 'vue-router'
 window.Vue = require('vue');
+import Login from './components/auth/login'
 import Dashboard from './components/Dashboard';
 import Profile from './components/Profile';
 import Users from './components/Users';
@@ -82,8 +83,8 @@ const router = new VueRouter({
         { path: '/users', component: Users },
         { path: '/developer', component: Developer },
         { path: '/mijnverzoeken', component: MyTasks },
-        { path: '/alleverzoeken', component: AllTasks }
-    ]    
+        { path: '/alleverzoeken', component: AllTasks },
+    ]
   })
   
 // Vue Filters Start here

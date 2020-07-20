@@ -28,7 +28,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper" id="app">
 
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light d-none d-sm-block">
+  <nav class="main-header navbar navbar-expand navbar-white navbar-light d-none d-sm-block ">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a href="#" class="nav-link" data-widget="pushmenu"><i class="fa fa-bars"></i></a>

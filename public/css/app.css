@@ -48267,6 +48267,50 @@ span.brand-text.font-weight-light {
   color: #fff;
 }
 
+/* Login */
+
+#app nav.navbar.navbar-expand-md.navbar-light.bg-white.shadow-sm {
+  background: #2F484E !important;
+}
+
+#app nav.navbar.navbar-expand-md.navbar-light.bg-white.shadow-sm {
+  box-shadow: none !important;
+}
+
+a.navbar-brand {
+  display: none;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  font-weight: 800;
+  font-family: "Anton";
+  color: #D6E74D;
+}
+
+#login-home .card {
+  background: #35555d;
+  color: #D6E74D;
+}
+
+#login-home .card-header {
+  text-align: center;
+  font-family: "Anton";
+  font-size: 18px;
+}
+
+#login-home button.btn.btn-primary {
+  background: #D6E74D;
+  color: #2F484E;
+  border: none;
+  font-family: "Anton";
+}
+
+#login-home .btn-link {
+  font-weight: 400;
+  color: #D6E74D;
+  text-decoration: none;
+}
+
 /* General */
 
 body {
