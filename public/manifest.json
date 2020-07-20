@@ -15,6 +15,7 @@
     "theme_color": "#000",
     "description": "You favorite recipe app",
     "dir": "ltr",
-    "lang": "en-US"
+    "lang": "en-US",
+    "gcm_sender_id": "172957971468"
 } 
  
