@@ -30,10 +30,10 @@
             </div>
             <div v-for="task in openTasks" :key="task.id" class="d-flex flex-row col-lg-12 verzoeken-body">
                   <div class="col-lg-2 profile-img">
-                    <!-- <img v-bind:src="'/img/profile/' + task.user.photo" />{{ task.user.name }} -->
+                    <img v-bind:src="'/img/profile/' + task.user.photo" />{{ task.user.name }}
                   </div>
                   <div class="col-lg-2 profile-img">
-                     <!-- <img v-bind:src="'/img/profile/' + task.company.photo" />{{ task.company.name }} -->
+                     <img v-bind:src="'/img/profile/' + task.company.photo" />{{ task.company.name }}
                   </div>
                   <div class="col-lg-4">
                     {{ task.title }}
@@ -84,10 +84,10 @@
                 </div>
                 <div v-for="task in busyTasks" :key="task.id" class="d-flex flex-row col-lg-12 verzoeken-body">
                   <div class="col-lg-2 profile-img">
-                    <!-- <img v-bind:src="'/img/profile/' + task.user.photo" />{{ task.user.name }} -->
+                    <img v-bind:src="'/img/profile/' + task.user.photo" />{{ task.user.name }}
                   </div>
                   <div class="col-lg-2 profile-img">
-                     <!-- <img v-bind:src="'/img/profile/' + task.company.photo" />{{ task.company.name }} -->
+                     <img v-bind:src="'/img/profile/' + task.company.photo" />{{ task.company.name }}
                   </div>
                   <div class="col-lg-4">
                     {{ task.title }}
@@ -138,10 +138,10 @@
                 </div>
                 <div v-for="task in closedTasks" :key="task.id" class="d-flex flex-row col-lg-12 verzoeken-body">
                   <div class="col-lg-2 profile-img">
-                    <!-- <img v-bind:src="'/img/profile/' + task.user.photo" />{{ task.user.name }} -->
+                    <img v-bind:src="'/img/profile/' + task.user.photo" />{{ task.user.name }}
                   </div>
                   <div class="col-lg-2 profile-img">
-                    <!-- <img v-bind:src="'/img/profile/' + task.company.photo" />{{ task.company.name }} -->
+                    <img v-bind:src="'/img/profile/' + task.company.photo" />{{ task.company.name }}
                   </div>
                   <div class="col-lg-4">
                     {{ task.title }}
