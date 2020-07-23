@@ -26,9 +26,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::apiResources(['user' =>  'API\UserController']);
 Route::apiResources(['task' =>  'API\TaskController']);
+Route::apiResources(['company' =>  'API\CompanyController']);
 Route::get('profile', 'API\UserController@profile');
 Route::get('findUser', 'API\UserController@search');
 Route::put('profile', 'API\UserController@updateProfile');
+Route::put('company', 'API\CompanyController@updateCompany');
 Route::get('allTasks', 'API\TaskController@allTasks');
 
 // Route::apiResources(['task' =>  'API\TaskControllers']);

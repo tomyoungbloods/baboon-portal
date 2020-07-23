@@ -48370,6 +48370,15 @@ body {
   background-color: #35555d;
 }
 
+.profile-img img {
+  width: 50px;
+  height: 50px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 54px;
+  margin-right: 20px;
+}
+
 /* ---------[Verzoeken]---------- */
 
 .verzoeken .profile-img img {

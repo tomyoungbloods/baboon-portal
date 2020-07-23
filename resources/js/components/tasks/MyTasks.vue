@@ -9,44 +9,50 @@
           </div>
           <div class="row mt-4 baboon-green-bg p-4">
             <div class="d-flex flex-row col-lg-12 verzoeken-header pb-3">
-              <div class="col-lg-3">
+              <div class="col-lg-2">
                 Wie pakt het op?
               </div>
-              <div class="col-lg-5 col-xs-12">
+              <div class="col-lg-2">
+                Bedrijf
+              </div>
+              <div class="col-lg-4">
                 Taak
               </div>
-              <div class="col-lg-2 col-xs-12">
+              <div class="col-lg-2 datum">
                 Date
               </div>
-              <div class="col-lg-1 col-xs-12">
+              <div class="col-lg-1">
                 Status
               </div>
-              <div class="col-lg-1 col-xs-12">
+              <div class="col-lg-1">
                 Edit
               </div>
             </div>
             <div v-for="task in openTasks" :key="task.id" class="d-flex flex-row col-lg-12 verzoeken-body">
-              <div class="col-lg-3 profile-img">
-                <img v-bind:src="'/img/profile/' + task.user.photo" />{{ task.user.name }}
-              </div>
-              <div class="col-lg-5">
-                {{ task.title }}
-              </div>
-              <div class="col-lg-2 datum">
-                {{ task.date | myDate }}
-              </div>
-              <div class="col-lg-1 status">
-                {{ task.status }}
-              </div>
-              <div class="col-lg-1">
-                <a href=# @click="editModal(task)">
-                    <i class="fa fa-edit baboon"></i>
-                </a>
-                <a href="#" @click="deleteTask(task.id)">
-                    <i class="fa fa-trash"></i>
-                </a>
-              </div>
-            </div>
+                  <div class="col-lg-2 profile-img">
+                    <img v-bind:src="'/img/profile/' + task.user.photo" />{{ task.user.name }}
+                  </div>
+                  <div class="col-lg-2 profile-img">
+                     <img v-bind:src="'/img/profile/' + task.company.photo" />{{ task.company.name }}
+                  </div>
+                  <div class="col-lg-4">
+                    {{ task.title }}
+                  </div>
+                  <div class="col-lg-2 datum">
+                    {{ task.date | myDate }}
+                  </div>
+                  <div class="col-lg-1 status">
+                    {{ task.status }}
+                  </div>
+                  <div class="col-lg-1">
+                    <a href=# @click="editModal(task)">
+                        <i class="fa fa-edit baboon"></i>
+                    </a>
+                    <a href="#" @click="deleteTask(task.id)">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                  </div>
+                </div>
 
           </div>
         </div>
@@ -57,13 +63,16 @@
               </div>
               <div class="row mt-4 baboon-green-bg p-4">
                 <div class="d-flex flex-row col-lg-12 verzoeken-header pb-3">
-                  <div class="col-lg-3">
+                  <div class="col-lg-2">
                     Wie pakt het op?
                   </div>
-                  <div class="col-lg-5">
+                  <div class="col-lg-2">
+                    Bedrijf
+                  </div>
+                  <div class="col-lg-4">
                     Taak
                   </div>
-                  <div class="col-lg-2">
+                  <div class="col-lg-2 datum">
                     Date
                   </div>
                   <div class="col-lg-1">
@@ -74,10 +83,13 @@
                   </div>
                 </div>
                 <div v-for="task in busyTasks" :key="task.id" class="d-flex flex-row col-lg-12 verzoeken-body">
-                  <div class="col-lg-3 profile-img">
+                  <div class="col-lg-2 profile-img">
                     <img v-bind:src="'/img/profile/' + task.user.photo" />{{ task.user.name }}
                   </div>
-                  <div class="col-lg-5">
+                  <div class="col-lg-2 profile-img">
+                     <img v-bind:src="'/img/profile/' + task.company.photo" />{{ task.company.name }}
+                  </div>
+                  <div class="col-lg-4">
                     {{ task.title }}
                   </div>
                   <div class="col-lg-2 datum">
@@ -105,10 +117,13 @@
               </div>
               <div class="row mt-4 baboon-green-bg p-4">
                 <div class="d-flex flex-row col-lg-12 verzoeken-header pb-3">
-                  <div class="col-lg-3">
+                  <div class="col-lg-2">
                     Wie pakt het op?
                   </div>
-                  <div class="col-lg-5">
+                  <div class="col-lg-2">
+                    Bedrijf
+                  </div>
+                  <div class="col-lg-4">
                     Taak
                   </div>
                   <div class="col-lg-2 datum">
@@ -122,13 +137,16 @@
                   </div>
                 </div>
                 <div v-for="task in closedTasks" :key="task.id" class="d-flex flex-row col-lg-12 verzoeken-body">
-                  <div class="col-lg-3 profile-img">
+                  <div class="col-lg-2 profile-img">
                     <img v-bind:src="'/img/profile/' + task.user.photo" />{{ task.user.name }}
                   </div>
-                  <div class="col-lg-5">
+                  <div class="col-lg-2 profile-img">
+                    <img v-bind:src="'/img/profile/' + task.company.photo" />{{ task.company.name }}
+                  </div>
+                  <div class="col-lg-4">
                     {{ task.title }}
                   </div>
-                  <div class="col-lg-2">
+                  <div class="col-lg-2 datum">
                     {{ task.date | myDate }}
                   </div>
                   <div class="col-lg-1 status">
@@ -188,6 +206,12 @@
                                                 </select>
                                                 <has-error :form="form" field="status"></has-error>
                                               </div>
+                                              <div class="form-group">
+                                                <select name="status"  v-model="form.company_id" id="status" class="form-control" :class="{ 'is-invalid': form.errors.has('status') }">
+                                                    <option v-for="company in companies" :key="company.id" :value="company.id">{{company.name}}</option>
+                                                </select>
+                                                <has-error :form="form" field="status"></has-error>
+                                              </div>
                                               <div class="input-group">
                                                 <v-row justify="center">
                                                   <v-date-picker v-model="form.date"></v-date-picker>
@@ -215,7 +239,7 @@
 
 
 
- 
+  
   
 </template>
 
@@ -231,6 +255,7 @@ export default {
             form: new Form({
                     id:'',
                     user_id : '',
+                    company_id : '',
                     title: '',
                     description: '',
                     status: '',
@@ -238,6 +263,7 @@ export default {
                 }),
             tasks : [],
             users: {},
+            companies: {},
         }
     },
     computed: {
@@ -304,6 +330,11 @@ export default {
                     axios.get("api/user").then(({ data }) => (this.users = data.data));
                 }
             },
+            loadCompanies(){
+                if(this.$gate.isAdminOrAuthor()){
+                    axios.get("api/company").then(({ data }) => (this.companies = data.data));
+                }
+            },
             editModal(task) {
                 this.editmode = true;
                 this.form.reset();
@@ -344,10 +375,12 @@ export default {
     created(){
         this.loadTasks();  
         this.loadUsers(); 
+        this.loadCompanies();
 
         Fire.$on('AfterCreate',() => {
                 this.loadTasks();  
                 this.loadUsers();
+                this.loadCompanies();
            });
     },
 

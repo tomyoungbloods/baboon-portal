@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Company;
 use App\Models\Task;
 use Illuminate\Support\Facades\Hash;
 
@@ -22,7 +23,7 @@ class TaskController extends Controller
         // paginate the authorized user's tasks with 5 per page
         $tasks = auth('api')->user()
             ->tasks()
-            ->with('user')
+            ->with('user', 'company')
             ->orderBy('date')
             ->paginate(25);
 
@@ -43,24 +44,15 @@ class TaskController extends Controller
             'title' => 'required|string|max:255',
         ]);
 
-        // // create a new incomplete task with the given title
-        // auth('api')->user()->tasks()->create([
-        //     'title' => $data['title'],
-        //     'status' => $data['status'],
-        // ]);
 
         return Task::create([
             'title' => $request['title'],
             'status' => $request['status'],
             'user_id' => $request['user_id'],
+            'company_id' => $request['company_id'],
             'date' => $request['date'],  
         ]);
 
-        // // flash a success message to the session
-        // session()->flash('status', 'Task Created!');
-
-        // // redirect to tasks index
-        // return redirect('/verzoeken');
     }
 
     /**
@@ -111,7 +103,7 @@ class TaskController extends Controller
         //     ->paginate(25); 
 
         // return task index view with paginated tasks
-        return Task::with('user')
+        return Task::with('user', 'company')
         ->orderBy('date')
         ->paginate(50);
 

@@ -19,6 +19,8 @@ import Users from './components/Users';
 import Developer from './components/Developer';
 import MyTasks from './components/tasks/MyTasks';
 import AllTasks from './components/tasks/AllTasks';
+import Companys from './components/companys/Companys';
+
 
 
 import Gate from "./Gate";
@@ -83,6 +85,7 @@ const router = new VueRouter({
         { path: '/developer', component: Developer },
         { path: '/mijnverzoeken', component: MyTasks },
         { path: '/alleverzoeken', component: AllTasks },
+        { path: '/bedrijven', component: Companys },
     ]
   })
   

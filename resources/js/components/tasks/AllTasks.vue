@@ -230,11 +230,13 @@ export default {
             editmode: false,
             form: new Form({
                     id:'',
+                    company_id: '',
                     user_id : '',
                     title: '',
                     description: '',
                     status: '',
                     date: '',
+
                 }),
             tasks : [],
             users: {},
