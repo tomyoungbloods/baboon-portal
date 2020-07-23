@@ -162,7 +162,6 @@
                   </div>
                 </div>
               </div>
-
           </div>
                     
         
@@ -244,11 +243,7 @@
 </template>
 
 <script>
-// import DatePicker from 'vue2-datepicker';
-// import 'vue2-datepicker/index.css';
-
 export default {
-  // components: { DatePicker },
     data () {
         return {
             editmode: false,
