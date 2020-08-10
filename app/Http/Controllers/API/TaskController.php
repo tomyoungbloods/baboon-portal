@@ -19,13 +19,13 @@ class TaskController extends Controller
      */
     public function index()
     {
-        
+
         // paginate the authorized user's tasks with 5 per page
         $tasks = auth('api')->user()
             ->tasks()
             ->with('user', 'company')
             ->orderBy('date')
-            ->paginate(25);
+            ->paginate(150);
 
         // return task index view with paginated tasks
         return $tasks;
@@ -50,7 +50,7 @@ class TaskController extends Controller
             'status' => $request['status'],
             'user_id' => $request['user_id'],
             'company_id' => $request['company_id'],
-            'date' => $request['date'],  
+            'date' => $request['date'],
         ]);
 
     }
@@ -98,9 +98,9 @@ class TaskController extends Controller
         // // paginate the authorized user's tasks with 5 per page
         // $tasks = auth('api')->user()
         //     ->tasks()
-        //     ->orderBy('is_complete') 
+        //     ->orderBy('is_complete')
         //     ->orderByDesc('created_at')
-        //     ->paginate(25); 
+        //     ->paginate(25);
 
         // return task index view with paginated tasks
         return Task::with('user', 'company')
