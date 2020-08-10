@@ -162,9 +162,10 @@
                   </div>
                 </div>
               </div>
+
           </div>
-                    
-        
+
+
               <button type="button" @click="newModal" class="add-right-button position-fixed right btn btn-info float-right"><i class="fas fa-plus"></i></button>
 
           <!-- /.Start-modal -->
@@ -182,7 +183,7 @@
                                       <form @submit.prevent="editmode ? updateTask() : createTask()">
                                       <div class="modal-body">
                                           <div class="form-group">
-                                            
+
                                               <input type="text" name="title" v-model="form.title" placeholder="Titel"
                                                   class="form-control">
                                               <has-error :form="form" field="Task Title"></has-error>
@@ -216,16 +217,16 @@
                                                   <v-date-picker v-model="form.date"></v-date-picker>
                                                 </v-row>
                                             </div>
-                                            
-                                          
-                                              
+
+
+
                                           <div class="modal-footer">
                                               <button v-show="editmode" type="submit" class="btn btn-primary">Bewerk</button>
                                               <button v-show="!editmode" type="submit" class="btn btn-primary">Voeg verzoek toe</button>
                                           </div>
-                                      </div>  
-                                      </form> 
-                                  </div> 
+                                      </div>
+                                      </form>
+                                  </div>
                           </div>
                       </div>
                   </div>
@@ -238,8 +239,8 @@
 
 
 
-  
-  
+
+
 </template>
 
 <script>
@@ -356,25 +357,25 @@ export default {
                                 'De Task is gewist',
                                 'success'
                                     )
-                                Fire.$emit('AfterCreate');  
+                                Fire.$emit('AfterCreate');
                             })
                         }
                         }).catch(()=> {
                             swal.fire('Oei!', 'Er gaat iets niet helemaal lekker.', 'warning');
                         });
 
-                    
+
 
             }
-            
+
     },
      created(){
-        this.loadTasks();  
-        this.loadUsers(); 
+        this.loadTasks();
+        this.loadUsers();
         this.loadCompanies();
 
         Fire.$on('AfterCreate',() => {
-                this.loadTasks();  
+                this.loadTasks();
                 this.loadUsers();
                 this.loadCompanies();
            });
