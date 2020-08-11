@@ -24,7 +24,8 @@ class TaskController extends Controller
         $tasks = auth('api')->user()
             ->tasks()
             ->with('user', 'company')
-            ->orderBy('date');
+            ->orderBy('date')
+            ->paginate(1500);
 
         // return task index view with paginated tasks
         return $tasks;
@@ -104,7 +105,7 @@ class TaskController extends Controller
         // return task index view with paginated tasks
         return Task::with('user', 'company')
         ->orderByDesc('date')
-
+        ->paginate(1500);
 
     }
 }
