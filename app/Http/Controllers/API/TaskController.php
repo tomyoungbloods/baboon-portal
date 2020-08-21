@@ -111,7 +111,15 @@ class TaskController extends Controller
 
     public function companyTasks($id)
     {
-        dd($id);
+
+
+        // $count = DB::table($tasks)
+        // ->select(DB::raw('count(*) as count'))
+        // ->where('company_id', '=', $id)
+        // ->first()
+        // ->count;
+
+        // dd($count);
         // // paginate the authorized user's tasks with 5 per page
         // $tasks = auth('api')->user()
         //     ->tasks()
@@ -120,7 +128,7 @@ class TaskController extends Controller
         //     ->paginate(25);
 
         // return task index view with paginated tasks
-        return Task::with('user', 'company')
+        return Task::where('company_id', $id)->with('user', 'company')
         ->orderByDesc('date')
         ->paginate(1500);
 

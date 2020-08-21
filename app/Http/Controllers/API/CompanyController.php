@@ -31,7 +31,7 @@ class CompanyController extends Controller
     public function index()
     {
         if (\Gate::allows('isAdmin') || \Gate::allows('isAuthor')) {
-            return Company::latest()->paginate(10);
+            return Company::with('tasks')->latest()->paginate(100);
         }
 
     }
@@ -75,8 +75,7 @@ class CompanyController extends Controller
 
     public function show($id)
     {
-
-            $company = Company::findorfail($id)->with('task');
+            $company = Company::findorfail($id);
             return $company;
     }
 

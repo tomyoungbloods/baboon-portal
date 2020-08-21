@@ -32,5 +32,5 @@ Route::get('findUser', 'API\UserController@search');
 Route::put('profile', 'API\UserController@updateProfile');
 Route::put('company', 'API\CompanyController@updateCompany');
 Route::get('allTasks', 'API\TaskController@allTasks');
-Route::get('companyTasks/{id}', 'API\CompanyController@companyTasks');
+Route::get('companyTasks/{id}', 'API\TaskController@companyTasks');
 // Route::apiResources(['task' =>  'API\TaskControllers']);

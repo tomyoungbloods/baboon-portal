@@ -24,7 +24,7 @@ class Company extends Model
         'web',
         'bio',
         'photo',
-        'task'
+        'tasks_id'
     ];
 
 public function tasks()
@@ -32,8 +32,4 @@ public function tasks()
     return $this->hasMany(Task::class);
 }
 
-public function task()
-    {
-        return $this->belongsTo(task::class);
-    }
 }

@@ -206,12 +206,6 @@
                                                 </select>
                                                 <has-error :form="form" field="status"></has-error>
                                               </div>
-                                              <div class="form-group">
-                                                <select name="status"  v-model="form.company_id" id="status" class="form-control" :class="{ 'is-invalid': form.errors.has('status') }">
-                                                    <option v-for="company in companies" :key="company.id" :value="company.id">{{company.name}}</option>
-                                                </select>
-                                                <has-error :form="form" field="status"></has-error>
-                                              </div>
                                               <div class="input-group">
                                                 <v-row justify="center">
                                                   <v-date-picker v-model="form.date"></v-date-picker>
@@ -259,8 +253,7 @@ export default {
                 }),
             tasks : [],
             users: {},
-            id: Number(this.$route.params.id),
-            companies : null
+            id: Number(this.$route.params.id)
         }
     },
     computed: {
@@ -275,10 +268,9 @@ export default {
     }
   },
     methods : {
-
         loadTasks(){
                 if(this.$gate.isAdminOrAuthor()){
-                    axios.get("api/allTasks").then(({ data }) => (this.tasks = data.data));
+                    axios.get("api/companyTasks/" + this.id).then(({ data }) => (this.tasks = data.data));
                 }
             },
         newModal() {
@@ -286,21 +278,18 @@ export default {
                 this.form.reset();
                 $('#addNew').modal('show')
             },
+
         createTask(){
                 this.$Progress.start()
                 this.form.post('api/task', {title: '', status: ''})
                 .then(() => {
                     Fire.$emit('AfterCreate');
-
                     $('#addNew').modal('hide')
-
                     toast.fire({
                         icon: 'success',
                         title: 'Gebruiker is aangemaakt!'
                     })
-
                     this.$Progress.finish()
-
                     })
                     .catch(() => {
                         this.$Progress.fail()
@@ -333,12 +322,6 @@ export default {
                 this.form.reset();
                 $('#addNew').modal('show');
                 this.form.fill(task);
-
-            },
-            loadCompanies(){
-                if(this.$gate.isAdminOrAuthor()){
-                    axios.get("api/company/" + this.id).then(({ data }) => (this.companies = data));
-                    }
             },
             deleteTask(id) {
                 swal.fire({
@@ -364,27 +347,20 @@ export default {
                         }).catch(()=> {
                             swal.fire('Oei!', 'Er gaat iets niet helemaal lekker.', 'warning');
                         });
-
-
-
             }
-
     },
      created(){
         this.loadTasks();
         this.loadUsers();
         this.loadCompanies();
-
         Fire.$on('AfterCreate',() => {
                 this.loadTasks();
                 this.loadUsers();
                 this.loadCompanies();
            });
     },
-
 }
 </script>
 
 <style>
-
 </style>

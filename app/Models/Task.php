@@ -26,7 +26,8 @@ class Task extends Model
         'status',
         'user_id',
         'company_id',
-        'date'
+        'date',
+        'tasks'
     ];
 
     /**
@@ -38,12 +39,9 @@ class Task extends Model
     {
         return $this->belongsTo(User::class);
     }
+
     public function company()
     {
         return $this->belongsTo(Company::class);
     }
-    public function companies()
-{
-    return $this->hasMany(Task::class);
-}
 }

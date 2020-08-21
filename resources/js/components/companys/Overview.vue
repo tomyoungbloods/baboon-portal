@@ -4,10 +4,17 @@
         <router-link class="col-12 d-flex justify-space-around" :to="'/bedrijven' + company.id">
                 <v-flex class="col-8">
                     <v-card-title
+                        center
                         pa-0
                         class="body-2"
                         v-text="company.name"
                     ></v-card-title>
+                      <v-card-subtitle
+                        pa-3
+                        class="body-2 verzoeken-teller"
+                        v-text="company.tasks.length"
+                      >
+                      </v-card-subtitle>
                 </v-flex>
                 <v-flex class="col-4">
                     <v-avatar
@@ -25,19 +32,34 @@
 export default {
     data() {
         return {
-            companies : {}
+            companies : {},
+            tasks : {},
+            newArray: {}
         }
+    },
+    computed: {
+        openTasks()  {
+            // return this.companies.filter((value, index) => value (tasks => tasks.status === "open"))
+            // const newArray = this.companies.filter(tasks => tasks.status === "open")
+        },
     },
 
     methods: {
-            loadcompanies(){
+        loadTasks(){
                 if(this.$gate.isAdminOrAuthor()){
-                    axios.get("api/company").then(({ data }) => (this.companies = data.data));
-                    }
+                    axios.get("api/allTasks").then(({ data }) => (this.tasks = data.data));
                 }
+            },
+        loadcompanies(){
+            if(this.$gate.isAdminOrAuthor()){
+                axios.get("api/company").then(({ data }) => (this.companies = data.data));
+                }
+            }
     },
     created() {
            this.loadcompanies();
+           this.loadTasks();
+           this.openTasks();
            console.log("jeh");
            }
 }
@@ -55,6 +77,13 @@ export default {
     :hover {
         opacity: 0.6;
         transition: 0.5s;
+    }
+    .verzoeken-teller{
+        font-size: 28px;
+        font-weight: 700;
+        color: #D6E74D;
+        font-family: 'Anton';
+        padding-top: 10px;
     }
 }
 </style>
