@@ -20,11 +20,13 @@ import Developer from './components/Developer';
 import MyTasks from './components/tasks/MyTasks';
 import AllTasks from './components/tasks/AllTasks';
 import Companys from './components/companys/Companys';
+import Overview from './components/companys/Overview';
+import OverviewId from './components/companys/OverviewId';
 
 
 
 import Gate from "./Gate";
-Vue.prototype.$gate = new Gate(window.user); 
+Vue.prototype.$gate = new Gate(window.user);
 
 
 
@@ -37,7 +39,7 @@ Vue.component(AlertError.name, AlertError)
 import swal from 'sweetalert2'
 window.swal = swal;
 
-// Toast Modal Pop Up 
+// Toast Modal Pop Up
 
 const toast = swal.mixin({
     toast: true,
@@ -68,7 +70,7 @@ const options = {
     location: 'top',
     inverse: false
   }
-  
+
   Vue.use(VueProgressBar, options)
 
 
@@ -86,9 +88,11 @@ const router = new VueRouter({
         { path: '/mijnverzoeken', component: MyTasks },
         { path: '/alleverzoeken', component: AllTasks },
         { path: '/bedrijven', component: Companys },
+        { path: '/bedrijvenall', component: Overview },
+        { path: '/bedrijven:id/', component: OverviewId }
     ]
   })
-  
+
 // Vue Filters Start here
 
   Vue.filter('upText', function(text){
@@ -96,7 +100,7 @@ const router = new VueRouter({
   });
 
   Vue.filter('myDate', function(created){
-        return moment(created).format("MMM Do YYYY"); 
+        return moment(created).format("MMM Do YYYY");
   });
 
 // Create Custom Event

@@ -108,4 +108,21 @@ class TaskController extends Controller
         ->paginate(1500);
 
     }
+
+    public function companyTasks($id)
+    {
+        dd($id);
+        // // paginate the authorized user's tasks with 5 per page
+        // $tasks = auth('api')->user()
+        //     ->tasks()
+        //     ->orderBy('is_complete')
+        //     ->orderByDesc('created_at')
+        //     ->paginate(25);
+
+        // return task index view with paginated tasks
+        return Task::with('user', 'company')
+        ->orderByDesc('date')
+        ->paginate(1500);
+
+    }
 }

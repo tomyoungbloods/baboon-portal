@@ -14,7 +14,7 @@ class Company extends Model
      * @var array
      */
     protected $casts = [
-        
+
     ];
 
     protected $fillable = [
@@ -23,11 +23,17 @@ class Company extends Model
         'tel',
         'web',
         'bio',
-        'photo'
+        'photo',
+        'task'
     ];
 
 public function tasks()
 {
     return $this->hasMany(Task::class);
 }
+
+public function task()
+    {
+        return $this->belongsTo(task::class);
+    }
 }

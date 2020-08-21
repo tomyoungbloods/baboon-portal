@@ -25,7 +25,7 @@
                       <th>Website</th>
                     </tr>
                   </thead>
-                  
+
                   <tbody>
                     <tr v-for="company in companies" :key="company.id">
                         <td class="profile-img">
@@ -49,7 +49,7 @@
                   </tbody>
                 </table>
               </div>
-            
+
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
@@ -106,7 +106,7 @@
                                 <has-error :form="form" field="bio"></has-error>
                             </div>
 
-                            
+
 
                             <!-- <div class="form-group">
                                 <input v-model="form.password" type="password" name="password" id="password" placeholder="Wachtwoord"
@@ -131,7 +131,7 @@
 <script>
     export default {
         data() {
-            
+
             return {
             editmode: false,
                 companies : {},
@@ -150,7 +150,7 @@
         methods: {
             loadcompanies(){
                 if(this.$gate.isAdminOrAuthor()){
-                    
+
                     axios.get("api/company").then(({ data }) => (this.companies = data.data));
                 }
             },
@@ -171,7 +171,7 @@
                     this.$Progress.fail()
                 })
             },
-            editModal(company) { 
+            editModal(company) {
                 this.editmode = true;
                 this.form.reset();
                 $('#addNew').modal('show');
@@ -202,14 +202,14 @@
                                 'De gebruiker is gewist',
                                 'success'
                                     )
-                                Fire.$emit('AfterCreate');  
+                                Fire.$emit('AfterCreate');
                             })
                         }
                         }).catch(()=> {
                             swal.fire('Oei!', 'Er gaat iets niet helemaal lekker.', 'warning');
                         });
 
-                    
+
 
             },
             loadCompany(){
@@ -238,24 +238,24 @@
                     })
             },
             updateProfile(e){
-                
+
                 // Take file
                 let file = e.target.files[0];
                 let reader = new FileReader();
-               
+
                 if (file['size'] < 2111775){
                      reader.onloadend = (file) => {
                         console.log('RESULT', reader.result)
                         this.form.photo = reader.result;
                     }
-                
+
                 reader.readAsDataURL(file);
                 }else{
                     swal.fire({
                         icon: 'error',
                         title: 'Oops...',
                         text: 'Je upload een te grote afbeelding',
-                        
+
                     })
 
                 }
@@ -269,5 +269,5 @@
         //    setInterval(() => this.loadUsers(), 3000);
     }
     }
-    
+
 </script>

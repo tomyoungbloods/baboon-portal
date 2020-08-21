@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Task;
 use App\Models\Company;
 use Illuminate\Support\Facades\Hash;
 
@@ -32,7 +33,7 @@ class CompanyController extends Controller
         if (\Gate::allows('isAdmin') || \Gate::allows('isAuthor')) {
             return Company::latest()->paginate(10);
         }
-        
+
     }
     public function update(Request $request, $id)
     {
@@ -57,10 +58,10 @@ class CompanyController extends Controller
             if(file_exists($userPhoto)){
                 @unlink($userPhoto);
             }
-        } 
+        }
 
-        
-        
+
+
 
         // When the password is empty take old password
         if(!empty($request->password)){
@@ -69,7 +70,14 @@ class CompanyController extends Controller
 
         $user->update($request->all());
         return $user;
-        
+
+    }
+
+    public function show($id)
+    {
+
+            $company = Company::findorfail($id)->with('task');
+            return $company;
     }
 
     // /**
@@ -101,12 +109,12 @@ class CompanyController extends Controller
             if(file_exists($userPhoto)){
                 @unlink($userPhoto);
             }
-        } 
+        }
 
         return $company->update($request->all());
     }
 
-   
+
     /**
      * Remove the specified resource from storage.
      *

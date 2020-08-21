@@ -47,7 +47,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div>
 
 
-  
+
   </nav>
   <!-- /.navbar -->
   <div class="d-flex d-sm-none flex-row fixed-top header-logo">
@@ -111,7 +111,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <p>Bedrijven</p>
                   </router-link>
                 </li>
-              </ul> 
+              </ul>
             </li>
             <li class="nav-item">
               <router-link to="/profile" class="nav-link">
@@ -121,6 +121,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </router-link>
             </li>
+            <li class="nav-item">
+                <router-link to="/bedrijvenall" class="nav-link">
+                  <i class="nav-icon fas fas fa-crown"></i>
+                  <p>
+                    Overzicht klanten
+                  </p>
+                </router-link>
+              </li>
             <li class="nav-item">
               <router-link to="/mijnverzoeken" class="nav-link">
                 <i class="nav-icon fas fas fa-tasks"></i>
@@ -137,15 +145,15 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </p>
               </router-link>
             </li>
-            
+
             <li class="nav-item">
               <a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                               document.getElementById('logout-form').submit();">
-                <i class="nav-icon fas fa-power-off baboon-light"></i> 
+                <i class="nav-icon fas fa-power-off baboon-light"></i>
                 <p class="baboon-light">
                   {{ __('Logout') }}
-                </p>             
+                </p>
               </a>
 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -194,10 +202,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <a class="nav-link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                               document.getElementById('logout-form').submit();">
-                <i class="nav-icon fas fa-power-off baboon-light"></i> 
+                <i class="nav-icon fas fa-power-off baboon-light"></i>
                 <p class="baboon-light">
                   {{ __('Logout') }}
-                </p>             
+                </p>
               </a>
 
               <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -237,7 +245,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </p>
       </router-link>
     </div>
-       
+
   </div>
 
   <!-- Content Wrapper. Contains page content -->
@@ -247,22 +255,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="container-fluid">
         <router-view></router-view>
-        
+
         <vue-progress-bar></vue-progress-bar>
       </div>
     </div>
- 
-         
+
+
   </div>
   <!-- /.content-wrapper -->
 
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <!-- To the right -->
-    <div class="float-right d-none d-sm-inline">
-      Anything you want
-    </div>
     <!-- Default to the left -->
     <strong>Copyright &copy; 2020 <a href="https://baboonbranding.nl">Baboon Branding</a>.</strong> All rights reserved.
   </footer>
@@ -271,7 +275,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 @auth
 <script>
 
-window.user = @json(auth()->user()); 
+window.user = @json(auth()->user());
 
 </script>
 @endauth

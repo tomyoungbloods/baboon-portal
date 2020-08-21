@@ -12,7 +12,7 @@ class Task extends Model
      * @var array
      */
     protected $casts = [
-        
+
     ];
 
     /**
@@ -42,4 +42,8 @@ class Task extends Model
     {
         return $this->belongsTo(Company::class);
     }
+    public function companies()
+{
+    return $this->hasMany(Task::class);
+}
 }
