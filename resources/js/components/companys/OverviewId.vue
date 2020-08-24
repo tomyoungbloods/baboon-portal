@@ -245,7 +245,7 @@ export default {
             form: new Form({
                     id:'',
                     user_id : '',
-                    company_id : '',
+                    company_id : Number(this.$route.params.id),
                     title: '',
                     description: '',
                     status: '',
@@ -324,6 +324,11 @@ export default {
                 $('#addNew').modal('show');
                 this.form.fill(task);
             },
+            loadCompanies(){
+                if(this.$gate.isAdminOrAuthor()){
+                    axios.get("api/company").then(({ data }) => (this.companies = data.data));
+                }
+            },
             deleteTask(id) {
                 swal.fire({
                     title: 'Are you sure?',
@@ -354,6 +359,7 @@ export default {
         this.loadTasks();
         this.loadUsers();
         this.loadCompanies();
+
         Fire.$on('AfterCreate',() => {
                 this.loadTasks();
                 this.loadUsers();
