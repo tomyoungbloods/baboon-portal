@@ -38,10 +38,14 @@ export default {
         }
     },
     computed: {
-        openTasks()  {
+        openTasks(companies)  {
+             return _.orderBy(companies.tasks, 'length', 'asc');
             // return this.companies.filter((value, index) => value (tasks => tasks.status === "open"))
             // const newArray = this.companies.filter(tasks => tasks.status === "open")
         },
+        sortArrays(arrays) {
+            return _.orderBy(arrays, 'name', 'asc');
+        }
     },
 
     methods: {

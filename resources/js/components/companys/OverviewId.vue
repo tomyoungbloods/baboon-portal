@@ -265,7 +265,8 @@ export default {
     },
     closedTasks() {
       return this.tasks.filter(tasks => tasks.status === "voltooid" && tasks.company_id === this.id);
-    }
+    },
+
   },
     methods : {
         loadTasks(){
