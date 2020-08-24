@@ -129,7 +129,7 @@ class TaskController extends Controller
 
         // return task index view with paginated tasks
         return Task::where('company_id', $id)->with('user', 'company')
-        ->orderByDesc('date')
+        ->orderBy('date')
         ->paginate(1500);
 
     }
