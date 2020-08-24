@@ -253,7 +253,7 @@ export default {
                 }),
             tasks : [],
             users: {},
-            id: Number(this.$route.params.id)
+            id: Number(this.$route.params.id),
         }
     },
     computed: {
